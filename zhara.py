@@ -174,7 +174,7 @@ async def ask_zhara(data: ChatRequest = Body(...)):
     
     try:
         response_data = requests.post(
-            "http://localhost:11434/api/generate",
+            f"{config.OLLAMA_HOST}/api/generate",
             json={
                 "model": "qwen2:0.5b",
                 "prompt": data.text + "\n\nRespond in clear, simple, and well-punctuated sentences suitable for text-to-speech. Avoid code blocks, markdown, and special characters. Only output plain English sentences.",
