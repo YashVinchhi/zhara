@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zhara - AI Voice Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #f5f6fa;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(34, 40, 49, 0.95);
+            max-width: 500px;
+            margin: 40px auto;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 32px 28px 24px 28px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 28px;
+            margin-bottom: 8px;
+            color: #00adb5;
+        }
+        textarea, input[type="file"] {
+            width: 100%;
+            border-radius: 8px;
+            border: none;
+            padding: 12px;
+            margin-bottom: 12px;
+            font-size: 1em;
+            background: #393e46;
+            color: #f5f6fa;
+            box-sizing: border-box;
+        }
+        textarea:focus, input[type="file"]:focus {
+            outline: 2px solid #00adb5;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(90deg, #00adb5 0%, #007b7b 100%);
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 8px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #007b7b 0%, #00adb5 100%);
+        }
+        .response {
+            margin-top: 18px;
+            background: #222831;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 1.05em;
+            min-height: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        #ttsAudio {
+            width: 100%;
+            margin-top: 10px;
+            background: #222831;
+            border-radius: 8px;
+        }
+        label {
+            font-size: 1em;
+            color: #00adb5;
+            margin-bottom: 6px;
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 8px 12px 8px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Zhara Voice Assistant</h1>
+    <h2>Ask Zhara (Text-to-Speech)</h2>
+    <label for="askText">Type your question:</label>
+    <textarea id="askText" rows="3" placeholder="Type your question..."></textarea>
+    <button onclick="askZhara()">Send</button>
+    <div class="response" id="askResponse"></div>
+    <audio id="ttsAudio" controls style="display:none;"></audio>
+
+    <h2>Speech-to-Text (STT)</h2>
+    <label for="audioFile">Upload an audio file:</label>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button onclick="sttZhara()">Transcribe</button>
+    <div class="response" id="sttResponse"></div>
+</div>
+
+<script>
+function askZhara() {
+    const text = document.getElementById('askText').value;
+    fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('askResponse').innerText = data.reply;
+        document.getElementById('ttsAudio').src = '/audio';
+        document.getElementById('ttsAudio').style.display = 'block';
+    });
+}
+
+function sttZhara() {
+    const fileInput = document.getElementById('audioFile');
+    if (!fileInput.files.length) return;
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    fetch('/stt', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('sttResponse').innerText = data.text;
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+TTS
+fastapi
+pydantic
+requests
+numpy
+soundfile
+faster-whisper
+pydub
+scipy
+uvicorn
