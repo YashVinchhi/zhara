@@ -1,6 +1,12 @@
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
+# Add metadata labels
+LABEL maintainer="Yash Vinchhi <your-email@example.com>"
+LABEL version="1.0.0"
+LABEL description="Zhara AI Assistant - A conversational AI with speech and viseme generation capabilities"
+LABEL org.opencontainers.image.source="https://github.com/YashVinchhi/zhara"
+
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
@@ -15,15 +21,14 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rhubarb Lip Sync
+    # Install Rhubarb Lip Sync
 RUN apt-get update && apt-get install -y wget unzip \
     && wget https://github.com/DanielSWolf/rhubarb-lip-sync/releases/download/v1.13.0/Rhubarb-Lip-Sync-1.13.0-Linux.zip \
     && unzip Rhubarb-Lip-Sync-1.13.0-Linux.zip \
-    && mv rhubarb /usr/local/bin/ \
+    && mv Rhubarb-Lip-Sync-1.13.0-Linux/rhubarb /usr/local/bin/ \
     && rm Rhubarb-Lip-Sync-1.13.0-Linux.zip \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements file
+    && rm -rf Rhubarb-Lip-Sync-1.13.0-Linux \
+    && rm -rf /var/lib/apt/lists/*# Copy requirements file
 COPY requirements.txt .
 
 # Install Python dependencies
