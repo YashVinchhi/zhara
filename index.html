@@ -125,7 +125,7 @@ function askZhara() {
     .then(res => res.json())
     .then(data => {
         document.getElementById('askResponse').innerText = data.reply;
-        document.getElementById('ttsAudio').src = '/audio';
+        document.getElementById('ttsAudio').src = data.audio_url;
         document.getElementById('ttsAudio').style.display = 'block';
     });
 }
