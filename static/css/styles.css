@@ -1,0 +1,246 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --accent-color: #00adb5;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 10%;
+    background-color: var(--secondary-bg);
+    transition: width var(--transition-speed) ease;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar:hover {
+    width: 25%;
+}
+
+.sidebar-icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
+}
+
+.sidebar-icon:hover {
+    opacity: 1;
+}
+
+/* Main Content Styles */
+.main-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+}
+
+.chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.input-container {
+    position: relative;
+    transition: all var(--transition-speed);
+}
+
+.input-container.initial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.input-container.chat {
+    margin-top: auto;
+    width: 100%;
+}
+
+.input-box {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+    resize: none;
+    transition: all var(--transition-speed);
+}
+
+.input-box::placeholder {
+    color: var(--text-secondary);
+}
+
+.input-actions {
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.upload-btn, .send-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    transition: color var(--transition-speed);
+}
+
+.upload-btn:hover, .send-btn:hover {
+    color: var(--text-primary);
+}
+
+.model-select {
+    padding: 0.5rem;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    border-radius: 0.25rem;
+}
+
+/* Avatar Section Styles */
+.avatar-section {
+    width: 30%;
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+}
+
+.avatar-select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    border-radius: 0.25rem;
+}
+
+.avatar-canvas {
+    width: 100%;
+    height: calc(100% - 3rem);
+    background-color: var(--primary-bg);
+    border-radius: 0.5rem;
+}
+
+/* Message Styles */
+.message {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-bg);
+    animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+    background-color: var(--accent-color);
+    align-self: flex-end;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message-text {
+    line-height: 1.5;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 5%;
+    }
+    
+    .sidebar:hover {
+        width: 20%;
+    }
+    
+    .main-content {
+        width: 65%;
+    }
+    
+    .avatar-section {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        position: absolute;
+        z-index: 10;
+    }
+    
+    .sidebar:hover {
+        width: 30%;
+    }
+    
+    .main-content {
+        width: 100%;
+    }
+    
+    .avatar-section {
+        display: none;
+    }
+    
+    .input-container.initial {
+        width: 90%;
+    }
+}
