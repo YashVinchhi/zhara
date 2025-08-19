@@ -1,0 +1,12 @@
+[
+  {
+    "id": "c7a02e22-ae5d-463b-9daa-47907920b098",
+    "session_id": "a53d0ec8-db2d-4d7b-9bf6-ebbb877a0754",
+    "user_message": "write a sample java code",
+    "ai_response": "Sure, here is a simple Java code snippet that performs the task of printing \"Hello World\" to the console:\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}\n```\n\nThis code will output \"Hello World\" when executed.",
+    "timestamp": "2025-08-19T18:39:31.969344",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_44ed14cd-1d01-4646-ae5b-5959e670a6b1.wav",
+    "viseme_file": "visemes_44ed14cd-1d01-4646-ae5b-5959e670a6b1.json"
+  }
+]

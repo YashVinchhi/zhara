@@ -7,10 +7,18 @@ import asyncio
 import uuid
 from pathlib import Path
 from typing import Optional, List, Dict, Any
-from datetime import datetime
 import platform  # Add
+import tempfile
+import json
 
-from fastapi import APIRouter, HTTPException, UploadFile, File, Depends
+try:
+    import whisper
+    HAS_WHISPER = True
+except ImportError:
+    whisper = None
+    HAS_WHISPER = False
+
+from fastapi import APIRouter, HTTPException, UploadFile, File, Depends, WebSocket, WebSocketDisconnect, Response
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import soundfile as sf
@@ -19,12 +27,15 @@ import aiohttp
 
 from session_manager import SessionManager
 from tts_service import get_tts_service
-from utils import TextProcessor, MemoryManager, RateLimiter
+from utils import TextProcessor, RateLimiter
 import config
 import logging
 from chroma_memory import ChromaMemory
 
 logger = logging.getLogger(__name__)
+
+# Import centralized app state for consistent dependency injection
+from app_state import app_state
 
 # Initialize router
 router = APIRouter()
@@ -37,6 +48,7 @@ class ChatRequest(BaseModel):
     text: str
     model: str
     session_id: Optional[str] = None
+    tts_model: Optional[str] = None  # newly added
 
 class ChatResponse(BaseModel):
     reply: str
@@ -47,6 +59,9 @@ class ChatResponse(BaseModel):
     # New URL fields for frontend compatibility
     audio_url: Optional[str] = None
     viseme_url: Optional[str] = None
+    # Session change notification for frontend
+    session_changed: Optional[bool] = None
+    original_session_id: Optional[str] = None
 
 class SessionInfo(BaseModel):
     session_id: str
@@ -70,6 +85,15 @@ class TTSRequest(BaseModel):
     text: str
     voice: Optional[str] = "default"
 
+class TTSModelInfo(BaseModel):
+    name: str
+    gender: Optional[str] = None
+    display_name: Optional[str] = None
+
+class TTSProviderInfo(BaseModel):
+    id: str
+    label: str
+
 # Dependency Functions
 async def get_rate_limit():
     """Rate limiting dependency"""
@@ -84,14 +108,12 @@ async def get_rate_limit():
     return True
 
 async def get_session_manager() -> SessionManager:
-    """Get session manager instance"""
-    if not hasattr(get_session_manager, '_instance'):
-        get_session_manager._instance = SessionManager()
-    return get_session_manager._instance
+    """Get session manager instance from centralized app state"""
+    return app_state.get_session_manager()
 
 SKIP_CHROMA = platform.system() == "Windows"  # Skip semantic memory on Windows
 
-async def get_chroma_memory() -> ChromaMemory:
+async def get_chroma_memory() -> Optional[ChromaMemory]:
     """Get ChromaMemory singleton instance"""
     if SKIP_CHROMA:
         return None
@@ -289,12 +311,21 @@ async def chat_endpoint(
                 detail=f"Message too long (max {config.MAX_MESSAGE_LENGTH} characters)"
             )
 
-        # Get or create session
+        # Get or create session with proper change tracking
         session_id = request.session_id
+        session_changed = False
+        original_session_id = session_id
+
         if not session_id:
             session_id = session_manager.create_session()
+            session_changed = True
+            logger.info(f"Created new session: {session_id}")
         elif not session_manager.get_session(session_id):
+            # Session doesn't exist, create new one and notify frontend
+            old_session_id = session_id
             session_id = session_manager.create_session()
+            session_changed = True
+            logger.warning(f"Session {old_session_id} not found, created new session: {session_id}")
 
         # Generate response using AI model
         reply = await generate_ai_response(request.text, request.model, session_id)
@@ -342,7 +373,8 @@ async def chat_endpoint(
             tts_result = await tts_service.process_text_to_speech(
                 cleaned_reply,
                 str(audio_path),
-                timeout=wait_timeout
+                timeout=wait_timeout,
+                model_name=(request.tts_model or "default")
             )
 
             if tts_result and tts_result.success:
@@ -387,7 +419,9 @@ async def chat_endpoint(
             session_id=session_id,
             model_used=request.model,
             audio_url=audio_url,
-            viseme_url=viseme_url
+            viseme_url=viseme_url,
+            session_changed=session_changed,  # Notify session change
+            original_session_id=original_session_id  # Pass original session ID
         )
 
     except HTTPException:
@@ -402,7 +436,7 @@ async def text_to_speech(
     request: TTSRequest,
     rate_limit: None = Depends(get_rate_limit)
 ):
-    """Standalone TTS endpoint"""
+    """Standalone TTS endpoint with comprehensive file validation"""
     try:
         if not request.text.strip():
             raise HTTPException(status_code=400, detail="Empty text")
@@ -421,6 +455,12 @@ async def text_to_speech(
 
         if not result.success:
             raise HTTPException(status_code=500, detail=result.error_message)
+
+        # Validate the generated audio file
+        if not await validate_audio_file(audio_path):
+            logger.error(f"Generated audio file failed validation: {audio_path}")
+            # Create placeholder audio as fallback
+            audio_filename = await create_placeholder_audio(audio_path, request.text)
 
         # Build URL for frontend playback
         audio_url = f"/audio/{audio_filename}"
@@ -560,51 +600,148 @@ async def delete_session(
 
     return {"message": "Session deleted successfully"}
 
-# System and Model Endpoints
-@router.get("/api/models")
+@router.post("/api/sessions/{session_id}/suggest_title")
+async def suggest_session_title(session_id: str, session_manager: SessionManager = Depends(get_session_manager)):
+    """Suggest a concise session title based on recent conversation."""
+    session = session_manager.get_session(session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+    # Collect last few messages
+    messages = session_manager.get_session_messages(session_id, limit=6)
+    parts = []
+    for m in messages or []:
+        try:
+            if getattr(m, 'user_message', None):
+                parts.append(f"User: {m.user_message}")
+            if getattr(m, 'ai_response', None):
+                parts.append(f"Assistant: {m.ai_response}")
+        except Exception:
+            # Fallback if message is a dict
+            if isinstance(m, dict):
+                if m.get('user_message'):
+                    parts.append(f"User: {m.get('user_message')}")
+                if m.get('ai_response'):
+                    parts.append(f"Assistant: {m.get('ai_response')}")
+    context = "\n".join(parts)
+    if not context:
+        return {"title": session.title or "New chat"}
+    try:
+        system = (
+            "You generate short, descriptive chat titles. "
+            "Return 3-6 words, no punctuation, no quotes."
+        )
+        prompt = (
+            f"{system}\n\nConversation so far:\n{context}\n\nTitle:"
+        )
+        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10)) as s:
+            payload = {
+                "model": "llama3.2:3b",
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.3, "max_tokens": 20}
+            }
+            async with s.post(f"{config.OLLAMA_BASE_URL}/api/generate", json=payload) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    title = (data.get('response') or '').strip().strip('"').strip()
+                    # Basic cleanup
+                    if len(title) > 60:
+                        title = title[:60]
+                    if not title:
+                        title = session.title or "New chat"
+                else:
+                    title = session.title or "New chat"
+    except Exception:
+        title = session.title or "New chat"
+    return {"title": title}
+
+# Model and Service Information Endpoints
+@router.get("/models", response_model=List[ModelInfo])
 async def get_available_models():
-    """Get available AI models"""
+    """Get list of available Ollama models installed locally (via OLLAMA_BASE_URL)."""
     try:
-        # This would integrate with your model discovery logic
-        models = await fetch_available_models()
-        return {"models": models}
+        base = getattr(config, 'OLLAMA_BASE_URL', 'http://localhost:11434').rstrip('/')
+        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10)) as session:
+            async with session.get(f"{base}/api/tags") as response:
+                if response.status == 200:
+                    data = await response.json()
+                    models: List[ModelInfo] = []
+                    for model in data.get("models", []):
+                        name = model.get("name", "")
+                        size = model.get("size")
+                        # Normalize size to string
+                        size_str = str(size) if size is not None else None
+                        models.append(ModelInfo(
+                            name=name,
+                            size=size_str,
+                            modified_at=model.get("modified_at")
+                        ))
+                    return models
+                else:
+                    logger.warning(f"Ollama /api/tags returned {response.status}")
+                    return []
     except Exception as e:
-        logger.error(f"Error fetching models: {e}")
-        return {"models": [{"name": "offline"}], "error": str(e)}
+        logger.error(f"Error fetching Ollama models: {e}")
+        return []
 
-@router.get("/api/stats")
-async def get_system_stats(
-    session_manager: SessionManager = Depends(get_session_manager)
-):
-    """Get system statistics"""
+@router.get("/tts/providers", response_model=List[TTSProviderInfo])
+async def get_tts_providers():
+    """Get list of available TTS providers on this device."""
     try:
-        # TTS service stats
-        tts_service = get_tts_service()
-        tts_stats = tts_service.get_stats()
-
-        # Session stats
-        session_stats = session_manager.get_session_stats()
-
-        # Memory stats
-        memory_stats = MemoryManager.get_memory_usage()
-
-        return {
-            "tts": tts_stats,
-            "sessions": session_stats,
-            "memory": memory_stats,
-            "timestamp": datetime.now().isoformat()
-        }
+        svc = get_tts_service()
+        providers = svc.get_available_providers() or []
+        # Map to schema
+        return [TTSProviderInfo(id=p.get('id'), label=p.get('label')) for p in providers if p.get('id') and p.get('label')]
     except Exception as e:
-        logger.error(f"Error getting stats: {e}")
-        return {"error": str(e)}
+        logger.error(f"Error fetching TTS providers: {e}")
+        return []
+
+@router.get("/tts/voices", response_model=List[TTSModelInfo])
+async def get_tts_voices(provider: Optional[str] = None):
+    """Get list of available TTS voices/models for a specific provider on this device."""
+    try:
+        svc = get_tts_service()
+        prov = provider
+        if not prov:
+            # default to first available provider
+            ps = svc.get_available_providers()
+            prov = ps[0]['id'] if ps else None
+        if not prov:
+            return []
+        voices = svc.get_models_for_provider(prov) or []
+        items: List[TTSModelInfo] = []
+        for v in voices:
+            items.append(TTSModelInfo(
+                name=v.get('name', ''),
+                gender=v.get('gender'),
+                display_name=v.get('display_name')
+            ))
+        return items
+    except Exception as e:
+        logger.error(f"Error fetching TTS voices: {e}")
+        return []
+
+@router.get("/avatars", response_model=List[Dict[str, str]])
+async def get_avatar_models():
+    """Get list of available 3D avatar models"""
+    return [
+        {"id": "default", "name": "Default Avatar", "description": "Standard 3D avatar"},
+        {"id": "professional", "name": "Professional", "description": "Business-style avatar"},
+        {"id": "casual", "name": "Casual", "description": "Relaxed, friendly avatar"},
+        {"id": "futuristic", "name": "Futuristic", "description": "Sci-fi inspired avatar"},
+        {"id": "minimalist", "name": "Minimalist", "description": "Clean, simple design"},
+        {"id": "expressive", "name": "Expressive", "description": "Highly animated avatar"}
+    ]
 
 # File Serving Endpoints
 @router.get("/audio/{filename}")
 async def serve_audio(filename: str):
-    """Serve audio files"""
+    """Serve audio files with proper validation"""
     file_path = Path(config.AUDIO_OUTPUT_DIR) / filename
-    if not file_path.exists():
-        raise HTTPException(status_code=404, detail="Audio file not found")
+
+    # Enhanced file validation
+    if not await validate_audio_file(file_path):
+        raise HTTPException(status_code=404, detail="Audio file not found or invalid")
 
     return FileResponse(
         file_path,
@@ -614,16 +751,48 @@ async def serve_audio(filename: str):
 
 @router.get("/visemes/{filename}")
 async def serve_visemes(filename: str):
-    """Serve viseme files"""
+    """Serve viseme files with proper validation"""
     file_path = Path(config.VISEME_OUTPUT_DIR) / filename
-    if not file_path.exists():
-        raise HTTPException(status_code=404, detail="Viseme file not found")
+
+    # Enhanced file validation
+    if not await validate_viseme_file(file_path):
+        raise HTTPException(status_code=404, detail="Viseme file not found or invalid")
 
     return FileResponse(
         file_path,
         media_type="application/json",
         headers={"Cache-Control": "public, max-age=3600"}
     )
+
+# WebSocket Endpoint
+@router.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    """Lightweight WS endpoint to avoid 403 spam from stray clients (e.g., HMR).
+    Accepts connections and echoes a minimal ack, then keeps the socket open until the client disconnects.
+    """
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_text()
+            # Respond minimally to keep clients satisfied
+            await websocket.send_text("ack")
+    except WebSocketDisconnect:
+        pass
+    except Exception:
+        try:
+            await websocket.close()
+        except Exception:
+            pass
+
+@router.head("/queue")
+async def queue_head():
+    """No-op endpoint to satisfy health/queue probes."""
+    return Response(status_code=204)
+
+@router.get("/queue")
+async def queue_get():
+    """Simple queue status endpoint."""
+    return {"status": "ok"}
 
 # Helper Functions - Proper implementations
 async def fetch_available_models() -> List[Dict[str, Any]]:
@@ -667,22 +836,78 @@ def format_bytes(bytes_val: int) -> str:
         bytes_val /= 1024
     return f"{bytes_val:.1f} PB"
 
+# Global Whisper model instance for reuse
+_whisper_model = None
+
+async def get_whisper_model():
+    """Get or initialize Whisper model"""
+    global _whisper_model
+    if not HAS_WHISPER:
+        raise RuntimeError("OpenAI Whisper is not installed. Please install it with: pip install openai-whisper")
+
+    if _whisper_model is None:
+        try:
+            # Load the base Whisper model (you can change to 'small', 'medium', 'large' for better accuracy)
+            _whisper_model = whisper.load_model("base")
+            logger.info("Whisper model loaded successfully")
+        except Exception as e:
+            logger.error(f"Failed to load Whisper model: {e}")
+            raise
+    return _whisper_model
+
 async def process_speech_to_text(audio_data: np.ndarray) -> str:
-    """Process audio with Whisper - basic implementation"""
+    """Process audio with Whisper for speech-to-text conversion"""
     try:
-        # This is a placeholder - you would integrate with your actual Whisper model
-        # For now, return a basic transcription message
-        logger.info("Processing speech-to-text (placeholder implementation)")
-        return "Transcribed: Audio processing not fully implemented yet"
+        if not HAS_WHISPER:
+            logger.error("Whisper not available - speech-to-text functionality disabled")
+            return "Error: Speech-to-text functionality not available. Please install openai-whisper."
+
+        # Get Whisper model
+        model = await get_whisper_model()
+
+        # Create temporary file for Whisper processing
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+            temp_path = temp_file.name
+
+        try:
+            # Write audio data to temporary file
+            sf.write(temp_path, audio_data, 16000)
+
+            # Process with Whisper in a thread pool to avoid blocking
+            import concurrent.futures
+            loop = asyncio.get_event_loop()
+
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                result = await loop.run_in_executor(
+                    executor,
+                    lambda: model.transcribe(temp_path, language="en")
+                )
+
+            # Extract transcribed text
+            transcribed_text = result.get("text", "").strip()
+
+            if transcribed_text:
+                logger.info(f"Speech-to-text successful: {transcribed_text[:50]}...")
+                return transcribed_text
+            else:
+                logger.warning("Whisper returned empty transcription")
+                return "Sorry, I couldn't understand the audio."
+
+        finally:
+            # Clean up temporary file
+            try:
+                Path(temp_path).unlink()
+            except Exception:
+                pass
+
     except Exception as e:
         logger.error(f"Speech-to-text error: {e}")
-        return "Error: Could not transcribe audio"
+        return "Error: Could not transcribe audio. Please try again."
 
 async def save_visemes(visemes: List[Dict], output_path: Path):
     """Save visemes to file"""
     try:
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        import json
         with open(output_path, 'w') as f:
             json.dump(visemes, f, indent=2)
         logger.debug(f"Saved visemes to {output_path}")
@@ -716,3 +941,61 @@ async def create_placeholder_audio(output_path: Path, text: str) -> str:
         logger.error(f"Error creating placeholder audio: {e}")
         # Return the filename anyway so the frontend doesn't break
         return str(output_path.name)
+
+async def validate_audio_file(file_path: Path, min_size_bytes: int = 100) -> bool:
+    """Validate that audio file exists, has content, and is a valid audio file"""
+    try:
+        # Check if file exists
+        if not file_path.exists():
+            logger.warning(f"Audio file does not exist: {file_path}")
+            return False
+
+        # Check file size
+        file_size = file_path.stat().st_size
+        if file_size < min_size_bytes:
+            logger.warning(f"Audio file too small ({file_size} bytes): {file_path}")
+            return False
+
+        # Try to read the audio file to validate format
+        try:
+            audio_data, sample_rate = sf.read(str(file_path))
+            if len(audio_data) == 0:
+                logger.warning(f"Audio file contains no audio data: {file_path}")
+                return False
+            logger.debug(f"Audio file validated: {file_path} ({file_size} bytes, {len(audio_data)} samples)")
+            return True
+        except Exception as audio_error:
+            logger.warning(f"Audio file format validation failed: {file_path} - {audio_error}")
+            return False
+
+    except Exception as e:
+        logger.error(f"Error validating audio file {file_path}: {e}")
+        return False
+
+async def validate_viseme_file(file_path: Path) -> bool:
+    """Validate that viseme file exists and contains valid JSON"""
+    try:
+        # Check if file exists
+        if not file_path.exists():
+            logger.debug(f"Viseme file does not exist: {file_path}")
+            return False
+
+        # Check file size
+        file_size = file_path.stat().st_size
+        if file_size < 2:  # At least "{}"
+            logger.warning(f"Viseme file too small ({file_size} bytes): {file_path}")
+            return False
+
+        # Try to read and parse the JSON file
+        try:
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+            logger.debug(f"Viseme file validated: {file_path} ({file_size} bytes)")
+            return True
+        except json.JSONDecodeError as json_error:
+            logger.warning(f"Viseme file JSON validation failed: {file_path} - {json_error}")
+            return False
+
+    except Exception as e:
+        logger.error(f"Error validating viseme file {file_path}: {e}")
+        return False

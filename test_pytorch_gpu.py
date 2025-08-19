@@ -19,3 +19,4 @@ if torch.cuda.is_available():
     except Exception as e:
         print(f"❌ GPU computation test failed: {e}")
 else:
+    print("❌ No GPU available for computation")

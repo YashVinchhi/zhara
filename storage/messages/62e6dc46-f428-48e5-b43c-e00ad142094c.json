@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dc16a09a-9231-4924-98e0-a650f9a6762a",
+    "session_id": "62e6dc46-f428-48e5-b43c-e00ad142094c",
+    "user_message": "write a speach on why moon is important",
+    "ai_response": "Moon is important for several reasons:\n\n1. It serves as a home to many species of creatures such as plants, animals, and microorganisms.\n2. The moon provides essential resources like water, air, and sunlight that are crucial for life forms on Earth. \n\n3. Moon's gravitational pull keeps the Earth in orbit around the Sun. This stability is vital for sustaining life forms like humans.\n\n4. The lunar landers sent by NASA have provided insights into the history of our planet and some possible signs of extraterrestrial life.",
+    "timestamp": "2025-08-19T13:42:51.646349",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_1d676a95-47b6-498d-8b12-68d736b34d85.wav",
+    "viseme_file": "visemes_1d676a95-47b6-498d-8b12-68d736b34d85.json"
+  },
+  {
+    "id": "a2dde0da-84b3-48b3-a6a8-10807b549dfe",
+    "session_id": "62e6dc46-f428-48e5-b43c-e00ad142094c",
+    "user_message": "recheck this last response for factual error",
+    "ai_response": "The moon is an important celestial body that serves as a home to various species of living organisms, provides essential resources like water, air, and sunlight, keeps the Earth in orbit around the Sun, and has provided insights into the history of our planet. The lunar landers sent by NASA also have provided valuable information about possible signs of extraterrestrial life.",
+    "timestamp": "2025-08-19T13:44:28.810590",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_19d91de2-13a2-4a5c-a7be-3d695268430e.wav",
+    "viseme_file": "visemes_19d91de2-13a2-4a5c-a7be-3d695268430e.json"
+  },
+  {
+    "id": "9234a37e-0da3-4043-a83f-eaf307d3d3d2",
+    "session_id": "62e6dc46-f428-48e5-b43c-e00ad142094c",
+    "user_message": "recheck last 2 response for factual error and point out what was wrong in the response",
+    "ai_response": "The moon is a vital celestial body that provides essential resources like water, air, and sunlight, and prevents our planet from being in a dangerous orbit around the Sun. The lunar landers by NASA have provided valuable information about possible signs of extraterrestrial life. So my revised response was factual error as it incorrectly stated that the Moon's gravitational pull keeps the Earth in orbit around the Sun.",
+    "timestamp": "2025-08-19T13:45:10.896027",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_35975b5e-8dc8-4c06-80b1-be964a35f52f.wav",
+    "viseme_file": "visemes_35975b5e-8dc8-4c06-80b1-be964a35f52f.json"
+  },
+  {
+    "id": "12fa9005-5489-4659-8c5e-dbd4655e5ed7",
+    "session_id": "62e6dc46-f428-48e5-b43c-e00ad142094c",
+    "user_message": "recheck last 2 response for factual error and point out what was wrong in the response",
+    "ai_response": "The moon is not a home to many species of creatures, including plants, animals, or microorganisms. It does not provide water, air, or sunlight; these resources are essential for life on Earth but come from our planet's environment, not the moon. The moon's gravitational pull helps stabilize the Earth's orbit around the Sun, which is crucial for maintaining a stable climate and supporting life forms like humans. Lunar landers have indeed provided insights into the history of our planet and potential signs of extraterrestrial life.\n\nThe previous response contained factual errors regarding the moon being a home to species and providing essential resources.",
+    "timestamp": "2025-08-19T13:45:36.944917",
+    "model_used": "qwen2.5-coder:14b",
+    "audio_file": "response_30d5b695-5009-438d-ac90-bec33f65081c.wav",
+    "viseme_file": "visemes_30d5b695-5009-438d-ac90-bec33f65081c.json"
+  }
+]

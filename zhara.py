@@ -16,15 +16,15 @@ from fastapi.responses import FileResponse
 
 # Modular imports - avoiding wildcard imports
 from config import (
-    TTS_MODEL_PATH, WHISPER_MODEL_PATH, AUDIO_OUTPUT_DIR,
-    VISEME_OUTPUT_DIR, OFFLINE_MODE, HOST, PORT
+    TTS_MODEL_PATH, AUDIO_OUTPUT_DIR,
+    VISEME_OUTPUT_DIR, HOST, PORT
 )
 from utils import SystemInfo, FileManager, MemoryManager
-from session_manager import SessionManager
 from tts_service import initialize_tts_service, get_tts_service
 from api_router import router as api_router
 # from chroma_memory import ChromaMemory  # Not initialized here to avoid duplicate client
 from local_cache import LocalCache
+from app_state import app_state
 
 # Setup structured logging with UTF-8 encoding support
 logging.basicConfig(
@@ -37,10 +37,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Global instances
-session_manager: SessionManager = None
-# chroma_memory: ChromaMemory = None  # Managed by api_router dependency to ensure single instance
-local_cache: LocalCache = None
+# Application state container is imported from app_state module
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -60,16 +57,13 @@ async def lifespan(app: FastAPI):
     FileManager.ensure_directory_exists(VISEME_OUTPUT_DIR)
 
     # Initialize global services
-    global session_manager, local_cache
+    session_manager = app_state.get_session_manager()
+    local_cache = app_state.get_local_cache()
 
     try:
-        # Initialize session manager
-        session_manager = SessionManager()
-        logger.info("Session manager initialized")
-
         # Initialize lightweight local cache (optional)
         from config import STORAGE_DIR
-        local_cache = LocalCache(str(Path(STORAGE_DIR) / "response_cache.json"))
+        app_state.local_cache = LocalCache(str(Path(STORAGE_DIR) / "response_cache.json"))
         logger.info("Local cache initialized")
 
         # Initialize TTS service with background workers
@@ -81,6 +75,7 @@ async def lifespan(app: FastAPI):
             gpu_enabled=gpu_for_tts,
             max_workers=max_workers
         )
+        app_state.tts_service = tts_service
         logger.info(f"TTS service initialized with {max_workers} workers")
 
         # Periodic memory cleanup for better performance
@@ -120,8 +115,8 @@ async def periodic_cleanup():
             MemoryManager.cleanup_gpu_memory()
 
             # Clean old sessions (optional)
-            if session_manager:
-                session_manager.cleanup_old_sessions(days_old=7)
+            session_manager = app_state.get_session_manager()
+            session_manager.cleanup_old_sessions(days_old=7)
 
         except Exception as e:
             logger.error(f"Error in periodic cleanup: {e}")
@@ -134,10 +129,17 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware with specific origins for security
+# CORS middleware with proper port configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # Specific origins
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        f"http://localhost:{PORT}",
+        f"http://127.0.0.1:{PORT}"
+    ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
@@ -162,7 +164,7 @@ async def health_check():
         # Check service health
         memory_stats = MemoryManager.get_memory_usage()
         tts_stats = get_tts_service().get_stats()
-        session_stats = session_manager.get_session_stats()
+        session_stats = app_state.get_session_manager().get_session_stats() if app_state.get_session_manager() else {}
 
         return {
             "status": "healthy",
@@ -185,5 +187,5 @@ if __name__ == "__main__":
         port=PORT,
         reload=False,  # Disable reload in production
         log_level="info",
-        access_log=True
+        access_log=False
     )

@@ -847,3 +847,923 @@ Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 2025-08-18 15:16:43,215 - tts_service - INFO - TTS Worker 1 stopped
 2025-08-18 15:16:43,330 - tts_service - INFO - TTS service shutdown complete
 2025-08-18 15:16:43,437 - zhara - INFO - Shutdown complete
+2025-08-19 12:28:49,878 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 12:28:49,976 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 12:28:50,046 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 12:28:50,046 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 12:28:50,046 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 12:28:50,046 - utils - INFO -    Driver Version: 580.97
+2025-08-19 12:28:50,046 - session_manager - INFO - Loaded 4 sessions from storage
+2025-08-19 12:28:50,046 - zhara - INFO - Session manager initialized
+2025-08-19 12:28:50,047 - zhara - INFO - Local cache initialized
+2025-08-19 12:28:50,048 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 12:28:50,048 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 12:28:50,048 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 12:28:50,048 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 12:28:50,049 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 12:29:15,993 - session_manager - INFO - Loaded 4 sessions from storage
+2025-08-19 12:29:15,995 - session_manager - INFO - Created new session: aa7e8e9a-9fa7-4c4c-9fad-9e333fff18b3
+2025-08-19 12:29:16,025 - api_router - INFO - Found 3 Ollama models
+2025-08-19 12:29:22,948 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 12:29:25,567 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 12:29:25,568 - api_router - INFO - Starting TTS processing for text: Hello?...
+2025-08-19 12:29:25,568 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 12:29:25,568 - tts_service - INFO - Submitted TTS job f495cada-b99a-4f78-bd44-e8b7eafde0b1, queue size: 1
+2025-08-19 12:29:25,762 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 12:29:26,250 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 12:29:26,251 - tts_service - INFO - Generating TTS for text length: 6 characters
+2025-08-19 12:29:26,256 - tts_service - INFO - Using 45s timeout for text of 6 characters
+2025-08-19 12:29:26,421 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 12:29:26,421 - tts_service - INFO - TTS job f495cada-b99a-4f78-bd44-e8b7eafde0b1 completed in 0.85s
+2025-08-19 12:29:26,538 - api_router - INFO - TTS successful: response_76ddfe6d-4095-41f7-8dbd-eff52e700bb9.wav, processing time: 0.85s
+2025-08-19 12:29:26,538 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_76ddfe6d-4095-41f7-8dbd-eff52e700bb9.wav (46156 bytes)
+2025-08-19 12:33:50,205 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 12:38:15,568 - api_router - INFO - Found 3 Ollama models
+2025-08-19 12:38:15,590 - session_manager - INFO - Created new session: 60e75840-057a-4e2c-b821-81af2d327202
+2025-08-19 12:38:50,345 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 12:43:50,499 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 12:48:50,633 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 12:51:20,457 - session_manager - INFO - Created new session: 8668fb67-3e5f-4f13-8811-8c748eb7852f
+2025-08-19 12:51:20,462 - api_router - INFO - Found 3 Ollama models
+2025-08-19 12:52:28,254 - session_manager - INFO - Deleted session: 60e75840-057a-4e2c-b821-81af2d327202
+2025-08-19 12:52:33,320 - session_manager - INFO - Deleted session: aa7e8e9a-9fa7-4c4c-9fad-9e333fff18b3
+2025-08-19 12:52:33,323 - session_manager - INFO - Created new session: e8ad31b2-189c-4a43-91b2-faf8baf0c754
+2025-08-19 12:52:36,356 - session_manager - INFO - Deleted session: 8668fb67-3e5f-4f13-8811-8c748eb7852f
+2025-08-19 12:53:50,774 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 12:58:50,902 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:03:51,028 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:08:51,147 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:13:51,285 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:14:57,111 - session_manager - INFO - Created new session: d37fa06c-7af8-447b-8717-d6a0882cc55f
+2025-08-19 13:14:57,117 - api_router - INFO - Found 3 Ollama models
+2025-08-19 13:15:00,336 - session_manager - INFO - Deleted session: e8ad31b2-189c-4a43-91b2-faf8baf0c754
+2025-08-19 13:15:04,390 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 13:15:04,390 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 13:15:04,390 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 13:15:04,390 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 13:15:04,516 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 13:15:04,632 - zhara - INFO - Shutdown complete
+2025-08-19 13:15:12,656 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 13:15:12,681 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 13:15:12,741 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 13:15:12,742 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 13:15:12,742 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 13:15:12,742 - utils - INFO -    Driver Version: 580.97
+2025-08-19 13:15:12,742 - session_manager - INFO - Loaded 5 sessions from storage
+2025-08-19 13:15:12,742 - zhara - INFO - Session manager initialized
+2025-08-19 13:15:12,742 - zhara - INFO - Local cache initialized
+2025-08-19 13:15:12,742 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 13:15:12,744 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 13:15:12,744 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 13:15:12,744 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 13:15:12,744 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 13:20:12,984 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:24:05,019 - session_manager - INFO - Loaded 5 sessions from storage
+2025-08-19 13:24:05,021 - session_manager - INFO - Created new session: b2d56584-f389-4406-8329-d245139c5fa1
+2025-08-19 13:24:05,028 - api_router - INFO - Found 3 Ollama models
+2025-08-19 13:24:15,879 - session_manager - INFO - Deleted session: d37fa06c-7af8-447b-8717-d6a0882cc55f
+2025-08-19 13:24:26,903 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 13:24:32,521 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 13:24:32,522 - api_router - INFO - Starting TTS processing for text: Hello! How can I assist you today?...
+2025-08-19 13:24:32,522 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:24:32,522 - tts_service - INFO - Submitted TTS job 7d9f65a2-658c-4f8a-919b-2a6bec8e0d77, queue size: 1
+2025-08-19 13:24:32,654 - tts_service - INFO - Loading TTS model for worker 1: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 13:24:33,030 - tts_service - INFO - TTS model loaded successfully for worker 1
+2025-08-19 13:24:33,031 - tts_service - INFO - Generating TTS for text length: 34 characters
+2025-08-19 13:24:33,032 - tts_service - INFO - Using 45s timeout for text of 34 characters
+2025-08-19 13:24:33,665 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:24:33,665 - tts_service - INFO - TTS job 7d9f65a2-658c-4f8a-919b-2a6bec8e0d77 completed in 1.14s
+2025-08-19 13:24:33,809 - api_router - INFO - TTS successful: response_890bd41a-0b22-417d-8b35-0dafcf7bbd62.wav, processing time: 1.14s
+2025-08-19 13:24:33,809 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_890bd41a-0b22-417d-8b35-0dafcf7bbd62.wav (156268 bytes)
+2025-08-19 13:25:13,096 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:25:14,856 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 13:25:20,561 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 13:25:20,562 - api_router - INFO - Starting TTS processing for text: Certainly! Here s a simple guide to making a chair...
+2025-08-19 13:25:20,562 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 1.142634391784668, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:25:20,562 - tts_service - INFO - Submitted TTS job 867728e1-d6f8-46c8-85bc-072e1aca44fb, queue size: 1
+2025-08-19 13:25:20,685 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 13:25:21,019 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 13:25:21,019 - tts_service - INFO - Generating TTS for text length: 756 characters
+2025-08-19 13:25:21,020 - tts_service - INFO - TTS chunking: 3 chunks
+2025-08-19 13:25:21,020 - tts_service - INFO - Using 90s timeout for text of 756 characters
+2025-08-19 13:25:36,482 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:25:36,482 - tts_service - INFO - TTS job 867728e1-d6f8-46c8-85bc-072e1aca44fb completed in 15.92s
+2025-08-19 13:25:36,603 - api_router - INFO - TTS successful: response_4060eefa-0f03-464e-8f90-be89da57200d.wav, processing time: 15.92s
+2025-08-19 13:25:36,604 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_4060eefa-0f03-464e-8f90-be89da57200d.wav (2811852 bytes)
+2025-08-19 13:26:47,849 - session_manager - INFO - Created new session: d42c4c8d-4a54-4f9e-b2c5-0a6ab42e9669
+2025-08-19 13:26:47,853 - api_router - INFO - Found 3 Ollama models
+2025-08-19 13:26:57,267 - session_manager - INFO - Deleted session: d42c4c8d-4a54-4f9e-b2c5-0a6ab42e9669
+2025-08-19 13:26:57,269 - session_manager - INFO - Created new session: ff70e515-78b7-478c-ac6d-6693bd0440fd
+2025-08-19 13:30:13,214 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:35:13,349 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:40:13,488 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:40:56,427 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 13:40:56,427 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 13:40:56,427 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 13:40:56,427 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 13:40:56,538 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 13:40:56,650 - zhara - INFO - Shutdown complete
+2025-08-19 13:41:02,882 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 13:41:02,907 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 13:41:03,009 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 13:41:03,009 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 13:41:03,009 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 13:41:03,009 - utils - INFO -    Driver Version: 580.97
+2025-08-19 13:41:03,010 - session_manager - INFO - Loaded 6 sessions from storage
+2025-08-19 13:41:03,010 - zhara - INFO - Session manager initialized
+2025-08-19 13:41:03,010 - zhara - INFO - Local cache initialized
+2025-08-19 13:41:03,011 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 13:41:03,011 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 13:41:03,011 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 13:41:03,011 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 13:41:03,012 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 13:41:19,873 - session_manager - INFO - Loaded 6 sessions from storage
+2025-08-19 13:41:19,874 - session_manager - INFO - Created new session: 62e6dc46-f428-48e5-b43c-e00ad142094c
+2025-08-19 13:41:19,882 - api_router - INFO - Found 3 Ollama models
+2025-08-19 13:41:47,980 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 13:41:49,176 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 13:41:49,177 - api_router - INFO - Starting TTS processing for text: Moon is important for several reasons: It serves a...
+2025-08-19 13:41:49,177 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:41:49,177 - tts_service - INFO - Submitted TTS job ef77f4d5-8021-4af8-883f-ecf8cf0b4480, queue size: 1
+2025-08-19 13:41:49,382 - tts_service - INFO - Loading TTS model for worker 1: tts_models/en/ljspeech/fast_pitch
+2025-08-19 13:42:47,553 - tts_service - INFO - TTS model loaded successfully for worker 1
+2025-08-19 13:42:47,554 - tts_service - INFO - Generating TTS for text length: 507 characters
+2025-08-19 13:42:47,555 - tts_service - INFO - Using 90s timeout for text of 507 characters
+2025-08-19 13:42:51,505 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:42:51,505 - tts_service - INFO - TTS job ef77f4d5-8021-4af8-883f-ecf8cf0b4480 completed in 62.33s
+2025-08-19 13:42:51,645 - api_router - INFO - TTS successful: response_1d676a95-47b6-498d-8b12-68d736b34d85.wav, processing time: 62.33s
+2025-08-19 13:42:51,645 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_1d676a95-47b6-498d-8b12-68d736b34d85.wav (1529036 bytes)
+2025-08-19 13:43:32,630 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 13:43:32,893 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 13:43:32,893 - api_router - INFO - Starting TTS processing for text: The moon is an important celestial body that serve...
+2025-08-19 13:43:32,893 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 62.32805562019348, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:43:32,893 - tts_service - INFO - Submitted TTS job 91457a87-96a4-4198-b5ec-2293f6b2cd11, queue size: 1
+2025-08-19 13:43:33,036 - tts_service - INFO - Loading TTS model for worker 1: tts_models/en/ljspeech/glow-tts
+2025-08-19 13:44:27,165 - tts_service - INFO - TTS model loaded successfully for worker 1
+2025-08-19 13:44:27,166 - tts_service - INFO - Generating TTS for text length: 378 characters
+2025-08-19 13:44:27,168 - tts_service - INFO - Using 45s timeout for text of 378 characters
+2025-08-19 13:44:28,695 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:44:28,695 - tts_service - INFO - TTS job 91457a87-96a4-4198-b5ec-2293f6b2cd11 completed in 55.80s
+2025-08-19 13:44:28,809 - api_router - INFO - TTS successful: response_19d91de2-13a2-4a5c-a7be-3d695268430e.wav, processing time: 55.80s
+2025-08-19 13:44:28,809 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_19d91de2-13a2-4a5c-a7be-3d695268430e.wav (1223788 bytes)
+2025-08-19 13:45:08,891 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 13:45:09,182 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 13:45:09,183 - api_router - INFO - Starting TTS processing for text: The moon is a vital celestial body that provides e...
+2025-08-19 13:45:09,183 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 2, 'jobs_failed': 0, 'average_processing_time': 59.064577460289, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:45:09,183 - tts_service - INFO - Submitted TTS job 2d6a440b-a15a-424f-8b77-828fe5d40a3c, queue size: 1
+2025-08-19 13:45:09,326 - tts_service - INFO - Generating TTS for text length: 421 characters
+2025-08-19 13:45:09,327 - tts_service - INFO - Using 45s timeout for text of 421 characters
+2025-08-19 13:45:10,752 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:45:10,752 - tts_service - INFO - TTS job 2d6a440b-a15a-424f-8b77-828fe5d40a3c completed in 1.57s
+2025-08-19 13:45:10,895 - api_router - INFO - TTS successful: response_35975b5e-8dc8-4c06-80b1-be964a35f52f.wav, processing time: 1.57s
+2025-08-19 13:45:10,895 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_35975b5e-8dc8-4c06-80b1-be964a35f52f.wav (1321612 bytes)
+2025-08-19 13:45:22,549 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 13:45:34,010 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 13:45:34,011 - api_router - INFO - Starting TTS processing for text: The moon is not a home to many species of creature...
+2025-08-19 13:45:34,011 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 3, 'jobs_failed': 0, 'average_processing_time': 39.899247328440346, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 13:45:34,011 - tts_service - INFO - Submitted TTS job 88ca2492-7a3b-43fb-bf20-072e5a35c1d8, queue size: 1
+2025-08-19 13:45:34,155 - tts_service - INFO - Generating TTS for text length: 660 characters
+2025-08-19 13:45:34,156 - tts_service - INFO - TTS chunking: 3 chunks
+2025-08-19 13:45:34,156 - tts_service - INFO - Using 90s timeout for text of 660 characters
+2025-08-19 13:45:36,811 - tts_service - INFO - TTS generation completed successfully
+2025-08-19 13:45:36,811 - tts_service - INFO - TTS job 88ca2492-7a3b-43fb-bf20-072e5a35c1d8 completed in 2.80s
+2025-08-19 13:45:36,943 - api_router - INFO - TTS successful: response_30d5b695-5009-438d-ac90-bec33f65081c.wav, processing time: 2.80s
+2025-08-19 13:45:36,944 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_30d5b695-5009-438d-ac90-bec33f65081c.wav (2104012 bytes)
+2025-08-19 13:46:03,165 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:51:03,335 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 13:56:03,485 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:01:03,636 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:06:03,772 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:11:03,915 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:14:36,688 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 14:14:36,688 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 14:14:36,688 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 14:14:36,688 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 14:14:36,821 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 14:14:36,955 - zhara - INFO - Shutdown complete
+2025-08-19 14:14:43,047 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 14:14:43,075 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 14:14:43,163 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 14:14:43,163 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 14:14:43,164 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 14:14:43,164 - utils - INFO -    Driver Version: 580.97
+2025-08-19 14:14:43,164 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 14:14:43,164 - zhara - INFO - Session manager initialized
+2025-08-19 14:14:43,164 - zhara - INFO - Local cache initialized
+2025-08-19 14:14:43,164 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 14:14:43,165 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 14:14:43,165 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 14:14:43,165 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 14:14:43,165 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 14:14:57,782 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 14:14:57,782 - session_manager - INFO - Created new session: 24a70510-e600-4853-8a34-3a79267d328a
+2025-08-19 14:14:57,797 - api_router - INFO - Found 3 Ollama models
+2025-08-19 14:16:03,061 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 14:16:05,788 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 14:16:05,789 - api_router - INFO - Starting TTS processing for text: Hello! How can I assist you today?...
+2025-08-19 14:16:05,789 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 14:16:05,789 - tts_service - INFO - Submitted TTS job c0dfc41b-2c7f-48fa-93c3-3f8df2ea61a0, queue size: 1
+2025-08-19 14:16:05,969 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 14:16:06,324 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 14:16:07,002 - api_router - INFO - TTS successful: response_aaca01b3-4479-498c-ac97-d73ffa594464.wav, processing time: 1.11s
+2025-08-19 14:16:07,003 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_aaca01b3-4479-498c-ac97-d73ffa594464.wav (154732 bytes)
+2025-08-19 14:16:22,494 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 14:16:31,457 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 14:16:31,457 - api_router - INFO - Starting TTS processing for text: Sure! Here's a simple Gujarati joke for you: ટ લ વ...
+2025-08-19 14:16:31,457 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 1.1079325675964355, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 14:16:31,457 - tts_service - INFO - Submitted TTS job aeb43d1c-da12-434e-8011-9389972716ca, queue size: 1
+2025-08-19 14:17:29,845 - api_router - INFO - TTS successful: response_523af7ee-fa2a-45c1-b7d3-da5b811f6f1a.wav, processing time: 58.26s
+2025-08-19 14:17:29,846 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_523af7ee-fa2a-45c1-b7d3-da5b811f6f1a.wav (11160812 bytes)
+2025-08-19 14:18:24,622 - session_manager - INFO - Created new session: 24f7378a-c689-41ee-b9c2-5a209a9ffaa5
+2025-08-19 14:18:24,627 - api_router - INFO - Found 3 Ollama models
+2025-08-19 14:19:43,298 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:24:43,446 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:29:43,558 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:34:43,671 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:39:43,801 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:44:43,942 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:49:44,067 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:54:44,210 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 14:59:44,348 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:04:44,485 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:07:56,315 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 15:07:56,315 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 15:07:56,315 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 15:07:56,315 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 15:07:56,421 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 15:07:56,525 - zhara - INFO - Shutdown complete
+2025-08-19 15:08:02,799 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 15:08:02,824 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 15:08:02,900 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 15:08:02,900 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 15:08:02,900 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 15:08:02,900 - utils - INFO -    Driver Version: 580.97
+2025-08-19 15:08:02,900 - session_manager - INFO - Loaded 9 sessions from storage
+2025-08-19 15:08:02,901 - zhara - INFO - Local cache initialized
+2025-08-19 15:08:02,901 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 15:08:02,901 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 15:08:02,901 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 15:08:02,901 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 15:08:02,902 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 15:08:11,003 - session_manager - INFO - Loaded 9 sessions from storage
+2025-08-19 15:08:11,003 - app_state - INFO - Session manager initialized
+2025-08-19 15:08:11,004 - session_manager - INFO - Created new session: 63e01a2f-0f4a-439d-aaf3-a81a95338ac7
+2025-08-19 15:08:11,008 - tts_service - INFO - Checking availability of fallback TTS models...
+2025-08-19 15:08:11,445 - tts_service - INFO - Fallback model available: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 15:08:11,973 - tts_service - INFO - Fallback model available: tts_models/en/ljspeech/fast_pitch
+2025-08-19 15:08:12,379 - tts_service - INFO - Fallback model available: tts_models/en/ljspeech/glow-tts
+2025-08-19 15:15:54,460 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 15:15:54,484 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 15:15:54,540 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 15:15:54,541 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 15:15:54,541 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 15:15:54,541 - utils - INFO -    Driver Version: 580.97
+2025-08-19 15:15:54,541 - session_manager - INFO - Loaded 10 sessions from storage
+2025-08-19 15:15:54,541 - zhara - INFO - Local cache initialized
+2025-08-19 15:15:54,542 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 15:15:54,542 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 15:15:54,542 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 15:15:54,542 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 15:15:54,542 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 15:15:58,376 - session_manager - INFO - Loaded 10 sessions from storage
+2025-08-19 15:15:58,376 - app_state - INFO - Session manager initialized
+2025-08-19 15:15:58,377 - session_manager - INFO - Created new session: 4bfe0275-98fa-421c-a2d5-88281dfafaaa
+2025-08-19 15:15:58,385 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:15:58,404 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 15:16:06,552 - session_manager - INFO - Deleted session: 4bfe0275-98fa-421c-a2d5-88281dfafaaa
+2025-08-19 15:16:06,555 - session_manager - INFO - Created new session: 26ae961e-f9d7-4530-9eea-c153c06bf99c
+2025-08-19 15:16:10,616 - session_manager - INFO - Deleted session: 24f7378a-c689-41ee-b9c2-5a209a9ffaa5
+2025-08-19 15:16:12,824 - session_manager - INFO - Deleted session: 63e01a2f-0f4a-439d-aaf3-a81a95338ac7
+2025-08-19 15:16:15,284 - session_manager - INFO - Deleted session: ff70e515-78b7-478c-ac6d-6693bd0440fd
+2025-08-19 15:16:19,265 - session_manager - INFO - Deleted session: b2d56584-f389-4406-8329-d245139c5fa1
+2025-08-19 15:16:19,268 - session_manager - INFO - Created new session: c11ee14d-a96e-4ac5-be55-263ec474f843
+2025-08-19 15:16:30,689 - session_manager - INFO - Created new session: c4dbfd3b-4497-4903-a005-1a98672b8c45
+2025-08-19 15:16:30,695 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:16:53,123 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 15:16:54,175 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 15:16:54,177 - api_router - INFO - Starting TTS processing for text: Sure thing! Here's a song for you to sing while in...
+2025-08-19 15:16:54,177 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 15:16:54,177 - tts_service - INFO - Submitted TTS job b0ccdde8-b399-4ee0-9d6f-76ec201b15b8, queue size: 1
+2025-08-19 15:16:54,355 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 15:16:54,712 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 15:17:00,043 - api_router - INFO - TTS successful: response_775df88e-1585-446a-b647-37323fa33a60.wav, processing time: 5.76s
+2025-08-19 15:17:00,044 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_775df88e-1585-446a-b647-37323fa33a60.wav (1024140 bytes)
+2025-08-19 15:18:18,509 - session_manager - INFO - Created new session: 6b1c3e62-69c0-4d4a-a3eb-f71ba8d182e6
+2025-08-19 15:18:18,545 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:18:21,252 - session_manager - INFO - Deleted session: c11ee14d-a96e-4ac5-be55-263ec474f843
+2025-08-19 15:18:48,319 - api_router - ERROR - Error decoding audio file: Error opening <_io.BytesIO object at 0x0000021A5A8FC0E0>: Format not recognised.
+2025-08-19 15:19:44,997 - api_router - INFO - Generating response with model: gpt-oss:20b
+2025-08-19 15:20:15,280 - api_router - WARNING - Timeout calling Ollama API with model gpt-oss:20b
+2025-08-19 15:20:15,280 - api_router - INFO - Starting TTS processing for text: Thank you for sharing that with me. Here's my pers...
+2025-08-19 15:20:15,280 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 5.755885124206543, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 15:20:15,280 - tts_service - INFO - Submitted TTS job 78c817db-6759-4234-abce-df2306c13355, queue size: 1
+2025-08-19 15:20:16,570 - api_router - INFO - TTS successful: response_962a3c28-6237-485e-928b-fd67ec12012b.wav, processing time: 1.18s
+2025-08-19 15:20:16,570 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_962a3c28-6237-485e-928b-fd67ec12012b.wav (227436 bytes)
+2025-08-19 15:20:44,117 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 15:20:54,677 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:21:08,878 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 15:21:08,879 - api_router - INFO - Starting TTS processing for text: Creating a simple calculator application with a gr...
+2025-08-19 15:21:08,879 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 2, 'jobs_failed': 0, 'average_processing_time': 3.4691977500915527, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 15:21:08,879 - tts_service - INFO - Submitted TTS job 162af134-dbd2-4f00-921c-f5155fd91693, queue size: 1
+2025-08-19 15:21:19,066 - api_router - INFO - TTS successful: response_9be4c060-f3a8-47f2-995c-2aec035e49b7.wav, processing time: 10.08s
+2025-08-19 15:21:19,067 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_9be4c060-f3a8-47f2-995c-2aec035e49b7.wav (1709228 bytes)
+2025-08-19 15:21:28,051 - session_manager - INFO - Created new session: 21e23f28-71f5-4cad-b2b4-87559ec72f71
+2025-08-19 15:21:28,056 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:25:53,483 - session_manager - INFO - Deleted session: 21e23f28-71f5-4cad-b2b4-87559ec72f71
+2025-08-19 15:25:53,486 - session_manager - INFO - Created new session: 146efa75-6517-4104-97a4-366497303e28
+2025-08-19 15:25:54,792 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:25:55,915 - session_manager - INFO - Deleted session: c4dbfd3b-4497-4903-a005-1a98672b8c45
+2025-08-19 15:25:58,183 - session_manager - INFO - Deleted session: 26ae961e-f9d7-4530-9eea-c153c06bf99c
+2025-08-19 15:30:54,928 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:33:02,212 - session_manager - INFO - Created new session: 0ff4f7df-dce5-4c91-ac72-45b04b1f8809
+2025-08-19 15:33:02,218 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:04,030 - session_manager - INFO - Created new session: 274b883a-34d7-4d5e-b341-006cd0ba9d87
+2025-08-19 15:33:04,034 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:04,582 - session_manager - INFO - Created new session: 489756f6-e2cb-4aef-9e84-a324d10dc089
+2025-08-19 15:33:04,585 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:04,800 - session_manager - INFO - Created new session: 29348c2f-e0b0-465a-bcd9-6dd371f9c596
+2025-08-19 15:33:04,804 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:05,006 - session_manager - INFO - Created new session: f3fc956f-03d7-4dcf-9e5e-b8ab8761b0d7
+2025-08-19 15:33:05,012 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:05,206 - session_manager - INFO - Created new session: 19bdc778-604c-4f01-8f05-937c82ba1635
+2025-08-19 15:33:05,210 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:05,401 - session_manager - INFO - Created new session: 02095c9a-ee7a-4b0d-a7cb-96d194979d16
+2025-08-19 15:33:05,406 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:07,198 - session_manager - INFO - Created new session: f0904b8f-08ad-47b2-86ad-7a1421280d29
+2025-08-19 15:33:07,203 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:07,909 - session_manager - INFO - Created new session: 1b6fbbbc-90c1-4455-a3a7-1c6030918fd3
+2025-08-19 15:33:07,913 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:24,355 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 15:33:24,355 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 15:33:24,355 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 15:33:24,355 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 15:33:24,469 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 15:33:24,573 - zhara - INFO - Shutdown complete
+2025-08-19 15:33:30,361 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 15:33:30,384 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 15:33:30,448 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 15:33:30,448 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 15:33:30,448 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 15:33:30,448 - utils - INFO -    Driver Version: 580.97
+2025-08-19 15:33:30,449 - session_manager - INFO - Loaded 17 sessions from storage
+2025-08-19 15:33:30,449 - zhara - INFO - Local cache initialized
+2025-08-19 15:33:30,450 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 15:33:30,450 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 15:33:30,450 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 15:33:30,450 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 15:33:30,450 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 15:33:37,440 - session_manager - INFO - Loaded 17 sessions from storage
+2025-08-19 15:33:37,441 - app_state - INFO - Session manager initialized
+2025-08-19 15:33:37,441 - session_manager - INFO - Created new session: fde377e4-c2d0-4458-99cf-8744b54b5036
+2025-08-19 15:33:37,448 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:37,448 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 15:33:41,237 - session_manager - INFO - Created new session: b5d71feb-f9a2-4d51-860a-20e1aac6ec4c
+2025-08-19 15:33:41,242 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:33:42,461 - session_manager - INFO - Created new session: 50f7ab0f-c8bf-4586-9783-fe6cebe15c55
+2025-08-19 15:33:42,466 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:34:02,791 - session_manager - INFO - Created new session: 4f71e04e-5989-406e-864b-aa240e682fa1
+2025-08-19 15:34:02,795 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:36:06,115 - session_manager - INFO - Deleted session: 4f71e04e-5989-406e-864b-aa240e682fa1
+2025-08-19 15:36:06,117 - session_manager - INFO - Created new session: 34a290de-6551-45ec-ab5a-9afe80d0de79
+2025-08-19 15:36:10,234 - session_manager - INFO - Deleted session: 50f7ab0f-c8bf-4586-9783-fe6cebe15c55
+2025-08-19 15:36:17,635 - session_manager - INFO - Deleted session: fde377e4-c2d0-4458-99cf-8744b54b5036
+2025-08-19 15:36:19,766 - session_manager - INFO - Deleted session: f0904b8f-08ad-47b2-86ad-7a1421280d29
+2025-08-19 15:36:23,498 - session_manager - INFO - Deleted session: 02095c9a-ee7a-4b0d-a7cb-96d194979d16
+2025-08-19 15:38:30,679 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:41:52,202 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 15:41:52,202 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 15:41:52,202 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 15:41:52,202 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 15:41:52,319 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 15:41:52,422 - zhara - INFO - Shutdown complete
+2025-08-19 15:41:58,297 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 15:41:58,322 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 15:41:58,403 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 15:41:58,403 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 15:41:58,403 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 15:41:58,403 - utils - INFO -    Driver Version: 580.97
+2025-08-19 15:41:58,404 - session_manager - INFO - Loaded 17 sessions from storage
+2025-08-19 15:41:58,404 - zhara - INFO - Local cache initialized
+2025-08-19 15:41:58,404 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 15:41:58,405 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 15:41:58,405 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 15:41:58,405 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 15:41:58,405 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 15:42:02,347 - session_manager - INFO - Loaded 17 sessions from storage
+2025-08-19 15:42:02,347 - app_state - INFO - Session manager initialized
+2025-08-19 15:42:02,348 - session_manager - INFO - Created new session: 98e8e3ae-f898-4c3b-9b98-4e5b395ef4ef
+2025-08-19 15:42:02,354 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:02,355 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 15:42:03,546 - session_manager - INFO - Created new session: 687cf573-270c-4b15-a8f8-886b11a2ffc5
+2025-08-19 15:42:03,551 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,064 - session_manager - INFO - Created new session: 7e46c57e-a105-4a5b-930f-259c118d46d1
+2025-08-19 15:42:04,068 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,260 - session_manager - INFO - Created new session: 1e8f5af2-b073-4bc7-b6e7-590fd61663ac
+2025-08-19 15:42:04,265 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,425 - session_manager - INFO - Created new session: 05cb33a8-335c-4b59-a1ba-7b6910fb98bb
+2025-08-19 15:42:04,430 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,567 - session_manager - INFO - Created new session: 8a7cc94a-5106-4896-8655-7f7d4eeca97d
+2025-08-19 15:42:04,573 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,724 - session_manager - INFO - Created new session: 2b475dc7-96c4-4b62-b4f8-39beb036972b
+2025-08-19 15:42:04,728 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:04,885 - session_manager - INFO - Created new session: f23886c6-bb03-4c78-968c-2db3f917c695
+2025-08-19 15:42:04,888 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:05,040 - session_manager - INFO - Created new session: 50a819e4-63b3-44a4-a287-2c344bdbff06
+2025-08-19 15:42:05,045 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:05,201 - session_manager - INFO - Created new session: acb2fe0e-e3aa-4d46-b4f7-be163018328b
+2025-08-19 15:42:05,205 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:42:05,372 - session_manager - INFO - Created new session: cc94755e-4b83-4b13-905c-063cea60a3e7
+2025-08-19 15:42:05,376 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:46:58,648 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 15:50:30,895 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 15:50:30,895 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 15:50:30,895 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 15:50:30,895 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 15:50:31,019 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 15:50:31,127 - zhara - INFO - Shutdown complete
+2025-08-19 15:50:37,017 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 15:50:37,045 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 15:50:37,100 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 15:50:37,100 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 15:50:37,100 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 15:50:37,100 - utils - INFO -    Driver Version: 580.97
+2025-08-19 15:50:37,100 - session_manager - INFO - Loaded 28 sessions from storage
+2025-08-19 15:50:37,101 - zhara - INFO - Local cache initialized
+2025-08-19 15:50:37,101 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 15:50:37,102 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 15:50:37,102 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 15:50:37,102 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 15:50:37,102 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 15:50:43,757 - session_manager - INFO - Loaded 28 sessions from storage
+2025-08-19 15:50:43,757 - app_state - INFO - Session manager initialized
+2025-08-19 15:50:43,758 - session_manager - INFO - Created new session: 8a9b3d57-79fd-4391-8593-0f765080106b
+2025-08-19 15:50:43,766 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 15:50:43,766 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:50:49,874 - session_manager - INFO - Deleted session: cc94755e-4b83-4b13-905c-063cea60a3e7
+2025-08-19 15:50:52,927 - session_manager - INFO - Deleted session: acb2fe0e-e3aa-4d46-b4f7-be163018328b
+2025-08-19 15:50:55,467 - session_manager - INFO - Deleted session: 50a819e4-63b3-44a4-a287-2c344bdbff06
+2025-08-19 15:51:00,267 - session_manager - INFO - Deleted session: 146efa75-6517-4104-97a4-366497303e28
+2025-08-19 15:51:02,519 - session_manager - INFO - Deleted session: 6b1c3e62-69c0-4d4a-a3eb-f71ba8d182e6
+2025-08-19 15:51:07,459 - session_manager - INFO - Deleted session: 8a9b3d57-79fd-4391-8593-0f765080106b
+2025-08-19 15:51:07,462 - session_manager - INFO - Created new session: dee8ab56-4016-4b5d-ada9-097527ee1f1e
+2025-08-19 15:51:08,075 - session_manager - INFO - Deleted session: dee8ab56-4016-4b5d-ada9-097527ee1f1e
+2025-08-19 15:51:08,078 - session_manager - INFO - Created new session: aafcd6a7-af13-4baa-8e30-84090b3c61d1
+2025-08-19 15:51:08,546 - session_manager - INFO - Deleted session: aafcd6a7-af13-4baa-8e30-84090b3c61d1
+2025-08-19 15:51:08,551 - session_manager - INFO - Created new session: bed43932-ed3c-449d-8b66-61ab02afe148
+2025-08-19 15:51:09,002 - session_manager - INFO - Deleted session: bed43932-ed3c-449d-8b66-61ab02afe148
+2025-08-19 15:51:09,005 - session_manager - INFO - Created new session: d21b207d-1043-4111-801f-d0be4bcd2d2b
+2025-08-19 15:51:09,418 - session_manager - INFO - Deleted session: d21b207d-1043-4111-801f-d0be4bcd2d2b
+2025-08-19 15:51:09,421 - session_manager - INFO - Created new session: 634b25e5-3b5b-4d01-9ade-b1a7a739c9ce
+2025-08-19 15:51:09,749 - session_manager - INFO - Deleted session: 634b25e5-3b5b-4d01-9ade-b1a7a739c9ce
+2025-08-19 15:51:09,751 - session_manager - INFO - Created new session: 64cf6786-32ef-4dae-b309-4e7e59d257ae
+2025-08-19 15:51:10,063 - session_manager - INFO - Deleted session: 64cf6786-32ef-4dae-b309-4e7e59d257ae
+2025-08-19 15:51:10,068 - session_manager - INFO - Created new session: aaf83738-08c3-4182-bce5-dc7c54211d36
+2025-08-19 15:51:10,250 - session_manager - INFO - Deleted session: aaf83738-08c3-4182-bce5-dc7c54211d36
+2025-08-19 15:51:10,253 - session_manager - INFO - Created new session: b33b9b86-b8fb-4e5c-867c-be671449bd50
+2025-08-19 15:51:10,401 - session_manager - INFO - Deleted session: b33b9b86-b8fb-4e5c-867c-be671449bd50
+2025-08-19 15:51:10,404 - session_manager - INFO - Created new session: 0e119c75-e6a8-41af-b5dd-79545e3292f3
+2025-08-19 15:51:10,562 - session_manager - INFO - Deleted session: 0e119c75-e6a8-41af-b5dd-79545e3292f3
+2025-08-19 15:51:10,565 - session_manager - INFO - Created new session: 75b764da-7c9e-4199-9091-12f97b52dc7b
+2025-08-19 15:51:10,698 - session_manager - INFO - Deleted session: 75b764da-7c9e-4199-9091-12f97b52dc7b
+2025-08-19 15:51:10,701 - session_manager - INFO - Created new session: 82a4bc47-d350-44ec-a6ce-e241f03da435
+2025-08-19 15:51:10,842 - session_manager - INFO - Deleted session: 82a4bc47-d350-44ec-a6ce-e241f03da435
+2025-08-19 15:51:10,844 - session_manager - INFO - Created new session: 8edebb65-4385-4746-8629-bbf99a866fee
+2025-08-19 15:51:10,962 - session_manager - INFO - Deleted session: 8edebb65-4385-4746-8629-bbf99a866fee
+2025-08-19 15:51:10,964 - session_manager - INFO - Created new session: 574b0ca5-1367-4deb-b756-160872073524
+2025-08-19 15:51:11,105 - session_manager - INFO - Deleted session: 574b0ca5-1367-4deb-b756-160872073524
+2025-08-19 15:51:11,109 - session_manager - INFO - Created new session: 9520414d-59dc-4aaf-8ef3-cb101021a928
+2025-08-19 15:51:11,251 - session_manager - INFO - Deleted session: 9520414d-59dc-4aaf-8ef3-cb101021a928
+2025-08-19 15:51:11,254 - session_manager - INFO - Created new session: 4d9f1ab2-33da-4af2-bf27-e78b75545ffd
+2025-08-19 15:51:11,882 - session_manager - INFO - Deleted session: 4d9f1ab2-33da-4af2-bf27-e78b75545ffd
+2025-08-19 15:51:11,885 - session_manager - INFO - Created new session: 96471edf-e276-4190-826d-74ef57424be7
+2025-08-19 15:51:12,030 - session_manager - INFO - Deleted session: 96471edf-e276-4190-826d-74ef57424be7
+2025-08-19 15:51:12,033 - session_manager - INFO - Created new session: b6676f38-6bf2-4056-8bee-c1df550099bd
+2025-08-19 15:51:12,170 - session_manager - INFO - Deleted session: b6676f38-6bf2-4056-8bee-c1df550099bd
+2025-08-19 15:51:12,174 - session_manager - INFO - Created new session: 3435e263-ea06-42cd-87f8-7d9860107939
+2025-08-19 15:51:12,322 - session_manager - INFO - Deleted session: 3435e263-ea06-42cd-87f8-7d9860107939
+2025-08-19 15:51:12,331 - session_manager - INFO - Created new session: 383921e7-c1ed-4a22-bf67-4dd498d6832a
+2025-08-19 15:51:12,458 - session_manager - INFO - Deleted session: 383921e7-c1ed-4a22-bf67-4dd498d6832a
+2025-08-19 15:51:12,461 - session_manager - INFO - Created new session: 0350b6ec-21ff-4ce7-8cf7-fd1efa897b3e
+2025-08-19 15:51:12,602 - session_manager - INFO - Deleted session: 0350b6ec-21ff-4ce7-8cf7-fd1efa897b3e
+2025-08-19 15:51:12,605 - session_manager - INFO - Created new session: a4c159aa-a432-4436-862f-7021ddd9b91f
+2025-08-19 15:51:12,761 - session_manager - INFO - Deleted session: a4c159aa-a432-4436-862f-7021ddd9b91f
+2025-08-19 15:51:12,764 - session_manager - INFO - Created new session: c5e18790-3fc3-49e3-8121-cda5ec5f887f
+2025-08-19 15:51:12,914 - session_manager - INFO - Deleted session: c5e18790-3fc3-49e3-8121-cda5ec5f887f
+2025-08-19 15:51:12,916 - session_manager - INFO - Created new session: c03d42c5-6f39-4899-ab6c-4f28f8e28a67
+2025-08-19 15:51:13,059 - session_manager - INFO - Deleted session: c03d42c5-6f39-4899-ab6c-4f28f8e28a67
+2025-08-19 15:51:13,061 - session_manager - INFO - Created new session: 7518f781-80e0-430d-a050-92295b08bd2d
+2025-08-19 15:51:14,003 - session_manager - INFO - Deleted session: 7518f781-80e0-430d-a050-92295b08bd2d
+2025-08-19 15:51:14,006 - session_manager - INFO - Created new session: bb4a559d-652a-4ae3-915c-8b13f7808e9b
+2025-08-19 15:51:15,131 - session_manager - INFO - Deleted session: f23886c6-bb03-4c78-968c-2db3f917c695
+2025-08-19 15:51:15,290 - session_manager - INFO - Deleted session: 2b475dc7-96c4-4b62-b4f8-39beb036972b
+2025-08-19 15:51:15,441 - session_manager - INFO - Deleted session: 8a7cc94a-5106-4896-8655-7f7d4eeca97d
+2025-08-19 15:51:15,593 - session_manager - INFO - Deleted session: 05cb33a8-335c-4b59-a1ba-7b6910fb98bb
+2025-08-19 15:51:15,761 - session_manager - INFO - Deleted session: 1e8f5af2-b073-4bc7-b6e7-590fd61663ac
+2025-08-19 15:51:15,898 - session_manager - INFO - Deleted session: 7e46c57e-a105-4a5b-930f-259c118d46d1
+2025-08-19 15:51:16,061 - session_manager - INFO - Deleted session: 687cf573-270c-4b15-a8f8-886b11a2ffc5
+2025-08-19 15:51:16,202 - session_manager - INFO - Deleted session: 98e8e3ae-f898-4c3b-9b98-4e5b395ef4ef
+2025-08-19 15:51:16,498 - session_manager - INFO - Deleted session: 34a290de-6551-45ec-ab5a-9afe80d0de79
+2025-08-19 15:51:16,642 - session_manager - INFO - Deleted session: b5d71feb-f9a2-4d51-860a-20e1aac6ec4c
+2025-08-19 15:51:16,786 - session_manager - INFO - Deleted session: 1b6fbbbc-90c1-4455-a3a7-1c6030918fd3
+2025-08-19 15:51:16,971 - session_manager - INFO - Deleted session: 19bdc778-604c-4f01-8f05-937c82ba1635
+2025-08-19 15:51:17,292 - session_manager - INFO - Deleted session: f3fc956f-03d7-4dcf-9e5e-b8ab8761b0d7
+2025-08-19 15:51:17,458 - session_manager - INFO - Deleted session: 29348c2f-e0b0-465a-bcd9-6dd371f9c596
+2025-08-19 15:51:17,610 - session_manager - INFO - Deleted session: 489756f6-e2cb-4aef-9e84-a324d10dc089
+2025-08-19 15:51:17,940 - session_manager - INFO - Deleted session: 274b883a-34d7-4d5e-b341-006cd0ba9d87
+2025-08-19 15:51:19,338 - session_manager - INFO - Deleted session: 0ff4f7df-dce5-4c91-ac72-45b04b1f8809
+2025-08-19 15:51:27,871 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 15:51:30,634 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 15:51:30,635 - api_router - INFO - Starting TTS processing for text: Hello! How can I assist you today?...
+2025-08-19 15:51:30,635 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 15:51:30,635 - tts_service - INFO - Submitted TTS job 073b4853-237a-4953-819c-0220340e5531, queue size: 1
+2025-08-19 15:51:30,819 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 15:51:31,204 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 15:51:31,954 - api_router - INFO - TTS successful: response_16416b60-c53c-4417-a48a-787e382f2d42.wav, processing time: 1.21s
+2025-08-19 15:51:31,954 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_16416b60-c53c-4417-a48a-787e382f2d42.wav (157804 bytes)
+2025-08-19 15:51:47,542 - api_router - INFO - Generating response with model: qwen2.5-coder:14b
+2025-08-19 15:52:13,835 - api_router - INFO - Successfully generated response using qwen2.5-coder:14b
+2025-08-19 15:52:13,836 - api_router - INFO - Starting TTS processing for text: Sure, here is a simple implementation of the Flapp...
+2025-08-19 15:52:13,836 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 1.2121458053588867, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 15:52:13,836 - tts_service - INFO - Submitted TTS job beca81a3-e1e8-4b3f-a5cd-d30dd102510b, queue size: 1
+2025-08-19 15:52:13,950 - tts_service - INFO - TTS chunking: 3 chunks
+2025-08-19 15:52:57,448 - tts_service - ERROR - TTS job beca81a3-e1e8-4b3f-a5cd-d30dd102510b failed: 
+2025-08-19 15:52:57,555 - api_router - ERROR - TTS failed: 
+2025-08-19 15:52:57,557 - api_router - INFO - Created placeholder audio file: D:\Code\project\zhara_V2\zhara\storage\audio\response_8db29ea4-84e0-46d2-bb53-4d7c538c6757.wav
+2025-08-19 15:53:56,375 - session_manager - INFO - Created new session: 16cc6d21-4aba-4afd-a056-18595afb9002
+2025-08-19 15:53:56,380 - api_router - INFO - Found 3 Ollama models
+2025-08-19 15:53:58,870 - session_manager - INFO - Deleted session: bb4a559d-652a-4ae3-915c-8b13f7808e9b
+2025-08-19 15:55:37,249 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:00:37,400 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:05:37,534 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:07:01,272 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 16:07:01,272 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 16:07:01,272 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 16:07:01,272 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 16:07:01,398 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 16:07:01,506 - zhara - INFO - Shutdown complete
+2025-08-19 16:07:07,658 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 16:07:07,684 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 16:07:07,782 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 16:07:07,782 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 16:07:07,782 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 16:07:07,782 - utils - INFO -    Driver Version: 580.97
+2025-08-19 16:07:07,782 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 16:07:07,782 - zhara - INFO - Local cache initialized
+2025-08-19 16:07:07,782 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 16:07:07,784 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 16:07:07,784 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 16:07:07,784 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 16:07:07,784 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 16:07:11,676 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 16:07:11,676 - app_state - INFO - Session manager initialized
+2025-08-19 16:07:11,677 - session_manager - INFO - Created new session: 38a08173-342f-4752-b111-1d30d6e24839
+2025-08-19 16:07:11,684 - api_router - INFO - Found 3 Ollama models
+2025-08-19 16:07:11,685 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 16:07:48,539 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 16:07:50,870 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 16:07:50,871 - api_router - INFO - Starting TTS processing for text: Of course! To make a Rikroll-style video rollovers...
+2025-08-19 16:07:50,871 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 16:07:50,871 - tts_service - INFO - Submitted TTS job e01c149e-2734-473a-a660-784ce743d0cd, queue size: 1
+2025-08-19 16:07:51,051 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 16:07:51,426 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 16:07:51,426 - tts_service - INFO - TTS chunking: 3 chunks
+2025-08-19 16:08:02,634 - api_router - INFO - TTS successful: response_b68faaef-935b-4d7b-9050-7557a286017c.wav, processing time: 11.65s
+2025-08-19 16:08:02,634 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_b68faaef-935b-4d7b-9050-7557a286017c.wav (1973484 bytes)
+2025-08-19 16:12:07,923 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:17:08,042 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:17:36,512 - session_manager - INFO - Created new session: 5ab785c2-d20b-4f5e-9071-78afe4452857
+2025-08-19 16:17:36,517 - api_router - INFO - Found 3 Ollama models
+2025-08-19 16:17:41,930 - session_manager - INFO - Deleted session: 38a08173-342f-4752-b111-1d30d6e24839
+2025-08-19 16:17:43,890 - session_manager - INFO - Deleted session: 16cc6d21-4aba-4afd-a056-18595afb9002
+2025-08-19 16:22:08,172 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:27:08,322 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:28:08,797 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 16:28:08,797 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 16:28:08,797 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 16:28:08,797 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 16:28:08,909 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 16:28:09,022 - zhara - INFO - Shutdown complete
+2025-08-19 16:28:15,101 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 16:28:15,126 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 16:28:15,190 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 16:28:15,190 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 16:28:15,191 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 16:28:15,191 - utils - INFO -    Driver Version: 580.97
+2025-08-19 16:28:15,191 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 16:28:15,191 - zhara - INFO - Local cache initialized
+2025-08-19 16:28:15,192 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 16:28:15,192 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 16:28:15,192 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 16:28:15,192 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 16:28:15,192 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 16:28:46,790 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 16:28:46,790 - app_state - INFO - Session manager initialized
+2025-08-19 16:28:46,790 - session_manager - INFO - Created new session: 84f9380e-1256-45fa-8dc5-1d06ec6a2d66
+2025-08-19 16:28:46,799 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 16:28:51,644 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 16:28:51,644 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 16:28:51,644 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 16:28:51,644 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 16:28:51,884 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 16:28:52,011 - zhara - INFO - Shutdown complete
+2025-08-19 16:28:57,990 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 16:28:58,014 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 16:28:58,062 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 16:28:58,062 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 16:28:58,062 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 16:28:58,062 - utils - INFO -    Driver Version: 580.97
+2025-08-19 16:28:58,063 - session_manager - INFO - Loaded 8 sessions from storage
+2025-08-19 16:28:58,063 - zhara - INFO - Local cache initialized
+2025-08-19 16:28:58,063 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 16:28:58,064 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 16:28:58,064 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 16:28:58,064 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 16:28:58,064 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 16:31:09,960 - session_manager - INFO - Loaded 8 sessions from storage
+2025-08-19 16:31:09,960 - app_state - INFO - Session manager initialized
+2025-08-19 16:31:09,961 - session_manager - INFO - Created new session: 70488163-cc2c-46eb-963c-d9c54099229e
+2025-08-19 16:31:09,970 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 16:31:12,590 - session_manager - INFO - Deleted session: 84f9380e-1256-45fa-8dc5-1d06ec6a2d66
+2025-08-19 16:31:32,178 - api_router - INFO - Generating response with model: llama3.2:3b
+2025-08-19 16:31:32,181 - api_router - WARNING - Ollama API error 404: {"error":"model 'llama3.2:3b' not found"}
+2025-08-19 16:31:32,182 - api_router - INFO - Starting TTS processing for text: Hello! How can I help you today?...
+2025-08-19 16:31:32,182 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 16:31:32,182 - tts_service - INFO - Submitted TTS job 3dcdf039-72f7-43a7-b355-9338e832f2b4, queue size: 1
+2025-08-19 16:31:32,383 - tts_service - INFO - Loading TTS model for worker 0: Bella
+2025-08-19 16:31:32,391 - tts_service - WARNING - Requested TTS model failed for worker 0: not enough values to unpack (expected 4, got 1)
+2025-08-19 16:31:32,391 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 16:31:32,391 - tts_service - ERROR - All TTS model loading failed for worker 0: Could not load any TTS model for worker 0
+2025-08-19 16:31:32,392 - tts_service - ERROR - TTS job 3dcdf039-72f7-43a7-b355-9338e832f2b4 failed: Could not load any TTS model for worker 0
+2025-08-19 16:31:32,496 - api_router - ERROR - TTS failed: Could not load any TTS model for worker 0
+2025-08-19 16:31:32,498 - api_router - INFO - Created placeholder audio file: D:\Code\project\zhara_V2\zhara\storage\audio\response_dddba3f2-a540-44df-a63b-c7c08d0d228f.wav
+2025-08-19 16:33:58,205 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:35:12,364 - session_manager - INFO - Deleted session: 24a70510-e600-4853-8a34-3a79267d328a
+2025-08-19 16:35:12,367 - session_manager - INFO - Created new session: 2999b3e3-9099-4429-8392-5eb20f59b75a
+2025-08-19 16:35:15,268 - session_manager - INFO - Deleted session: 5ab785c2-d20b-4f5e-9071-78afe4452857
+2025-08-19 16:35:19,377 - session_manager - INFO - Deleted session: 70488163-cc2c-46eb-963c-d9c54099229e
+2025-08-19 16:35:19,382 - session_manager - INFO - Created new session: 6e6f330c-6902-468e-ab82-de54f3bacdca
+2025-08-19 16:35:22,253 - session_manager - INFO - Deleted session: 2999b3e3-9099-4429-8392-5eb20f59b75a
+2025-08-19 16:38:58,347 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:39:18,336 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 16:39:18,336 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 16:39:18,336 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 16:39:18,336 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 16:39:18,446 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 16:39:18,546 - zhara - INFO - Shutdown complete
+2025-08-19 16:39:24,539 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 16:39:24,566 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 16:39:24,638 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 16:39:24,639 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 16:39:24,639 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 16:39:24,639 - utils - INFO -    Driver Version: 580.97
+2025-08-19 16:39:24,639 - session_manager - INFO - Loaded 6 sessions from storage
+2025-08-19 16:39:24,639 - zhara - INFO - Local cache initialized
+2025-08-19 16:39:24,640 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 16:39:24,640 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 16:39:24,640 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 16:39:24,640 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 16:39:24,640 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 16:39:39,902 - session_manager - INFO - Loaded 6 sessions from storage
+2025-08-19 16:39:39,903 - app_state - INFO - Session manager initialized
+2025-08-19 16:39:39,903 - session_manager - INFO - Created new session: 26145e15-2451-4f97-b42f-a5e580e1ba35
+2025-08-19 16:39:39,912 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 16:44:24,860 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:49:25,001 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:54:25,130 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 16:59:25,276 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:04:25,410 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:09:25,557 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:14:25,656 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:19:25,780 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:24:25,911 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:29:26,055 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:34:26,199 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:39:26,316 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:44:26,456 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:49:26,592 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:54:26,731 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 17:59:26,864 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:04:26,989 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:09:27,125 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:12:45,525 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:12:45,525 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:12:45,525 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:12:45,525 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:12:45,638 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:12:45,743 - zhara - INFO - Shutdown complete
+2025-08-19 18:12:51,770 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:12:51,796 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:12:51,873 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:12:51,873 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:12:51,873 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:12:51,873 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:12:51,873 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 18:12:51,873 - app_state - INFO - Session manager initialized
+2025-08-19 18:12:51,873 - app_state - INFO - Local cache initialized
+2025-08-19 18:12:51,874 - zhara - INFO - Local cache initialized
+2025-08-19 18:12:51,874 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:12:51,874 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:12:51,874 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:12:51,874 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:12:51,874 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:17:10,013 - session_manager - INFO - Created new session: f9366f43-3f94-4484-ab38-b2eaaa79029a
+2025-08-19 18:17:10,022 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 18:17:15,427 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:17:15,427 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:17:15,427 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:17:15,427 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:17:15,671 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:17:15,799 - zhara - INFO - Shutdown complete
+2025-08-19 18:17:21,883 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:17:21,908 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:17:21,962 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:17:21,962 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:17:21,962 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:17:21,962 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:17:21,962 - session_manager - INFO - Loaded 8 sessions from storage
+2025-08-19 18:17:21,962 - app_state - INFO - Session manager initialized
+2025-08-19 18:17:21,963 - app_state - INFO - Local cache initialized
+2025-08-19 18:17:21,963 - zhara - INFO - Local cache initialized
+2025-08-19 18:17:21,963 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:17:21,964 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:17:21,964 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:17:21,964 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:17:21,964 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:17:29,577 - session_manager - INFO - Created new session: 9410e12f-9f4e-4518-bf38-80bd8e9d1c2f
+2025-08-19 18:17:29,584 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 18:17:33,514 - session_manager - INFO - Deleted session: f9366f43-3f94-4484-ab38-b2eaaa79029a
+2025-08-19 18:17:36,021 - session_manager - INFO - Deleted session: 26145e15-2451-4f97-b42f-a5e580e1ba35
+2025-08-19 18:17:38,513 - session_manager - INFO - Deleted session: 6e6f330c-6902-468e-ab82-de54f3bacdca
+2025-08-19 18:18:13,998 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:18:13,998 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:18:13,998 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:18:13,998 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:18:14,185 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:18:14,292 - zhara - INFO - Shutdown complete
+2025-08-19 18:26:40,489 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:26:40,515 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:26:40,576 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:26:40,576 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:26:40,576 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:26:40,576 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:26:40,576 - session_manager - INFO - Loaded 6 sessions from storage
+2025-08-19 18:26:40,576 - app_state - INFO - Session manager initialized
+2025-08-19 18:26:40,576 - app_state - INFO - Local cache initialized
+2025-08-19 18:26:40,577 - zhara - INFO - Local cache initialized
+2025-08-19 18:26:40,577 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:26:40,577 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:26:40,577 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:26:40,577 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:26:40,578 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:26:53,251 - session_manager - INFO - Created new session: 26befb23-dcb4-4f9f-b247-6f9f31631195
+2025-08-19 18:26:53,261 - api_router - ERROR - Error fetching Ollama models: 1 validation error for ModelInfo
+size
+  Input should be a valid string [type=string_type, input_value=352164041, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-19 18:28:53,521 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:28:53,521 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:28:53,521 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:28:53,521 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:28:53,734 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:28:53,840 - zhara - INFO - Shutdown complete
+2025-08-19 18:33:51,945 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:33:51,971 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:33:52,032 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:33:52,032 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:33:52,032 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:33:52,032 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:33:52,032 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 18:33:52,032 - app_state - INFO - Session manager initialized
+2025-08-19 18:33:52,033 - app_state - INFO - Local cache initialized
+2025-08-19 18:33:52,033 - zhara - INFO - Local cache initialized
+2025-08-19 18:33:52,033 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:33:52,034 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:33:52,034 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:33:52,034 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:33:52,034 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:33:52,934 - session_manager - INFO - Created new session: f7965e62-f507-4189-b20b-04788b3f4980
+2025-08-19 18:33:52,971 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 18:34:09,318 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 18:34:10,237 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 18:34:10,238 - api_router - INFO - Starting TTS processing for text: Hello! How can I assist you today?...
+2025-08-19 18:34:10,238 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 18:34:10,238 - tts_service - INFO - Submitted TTS job dab23b98-e613-4b0a-adca-d83b376ac80d, queue size: 1
+2025-08-19 18:34:10,419 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 18:34:10,790 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 18:34:11,506 - api_router - INFO - TTS successful: response_ef5db146-fd31-4dcc-92f1-e1937f6bffcf.wav, processing time: 1.16s
+2025-08-19 18:34:11,506 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_ef5db146-fd31-4dcc-92f1-e1937f6bffcf.wav (154220 bytes)
+2025-08-19 18:34:24,507 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 18:34:25,039 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 18:34:25,040 - api_router - INFO - Starting TTS processing for text: Here's a sample Python code: This code defines a f...
+2025-08-19 18:34:25,040 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 1, 'jobs_failed': 0, 'average_processing_time': 1.1605746746063232, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 18:34:25,040 - tts_service - INFO - Submitted TTS job 699ea806-3fc6-4ec0-b401-e6b7d127e446, queue size: 1
+2025-08-19 18:34:29,158 - api_router - INFO - TTS successful: response_03211b8c-03f6-4a52-8cf9-9a494c7ace20.wav, processing time: 4.01s
+2025-08-19 18:34:29,158 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_03211b8c-03f6-4a52-8cf9-9a494c7ace20.wav (814732 bytes)
+2025-08-19 18:34:54,911 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:34:54,911 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:34:54,911 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:34:54,911 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:34:55,024 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:34:55,132 - zhara - INFO - Shutdown complete
+2025-08-19 18:38:50,811 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:38:50,840 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:38:50,957 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:38:50,958 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:38:50,958 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:38:50,958 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:38:50,958 - session_manager - INFO - Loaded 8 sessions from storage
+2025-08-19 18:38:50,958 - app_state - INFO - Session manager initialized
+2025-08-19 18:38:50,958 - app_state - INFO - Local cache initialized
+2025-08-19 18:38:50,958 - zhara - INFO - Local cache initialized
+2025-08-19 18:38:50,959 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:38:50,959 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:38:50,959 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:38:50,960 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:38:50,960 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:39:00,434 - session_manager - INFO - Created new session: a53d0ec8-db2d-4d7b-9bf6-ebbb877a0754
+2025-08-19 18:39:00,439 - tts_service - INFO - Skipping fallback model discovery to prevent unwanted downloads
+2025-08-19 18:39:00,440 - api_router - ERROR - Error fetching TTS voices: cannot access local variable 'items' where it is not associated with a value
+2025-08-19 18:39:27,294 - api_router - INFO - Generating response with model: qwen2:0.5b
+2025-08-19 18:39:28,614 - api_router - INFO - Successfully generated response using qwen2:0.5b
+2025-08-19 18:39:28,615 - api_router - INFO - Starting TTS processing for text: Sure, here is a simple Java code snippet that perf...
+2025-08-19 18:39:28,615 - api_router - INFO - TTS service stats before processing: {'jobs_processed': 0, 'jobs_failed': 0, 'average_processing_time': 0, 'queue_size': 0, 'active_workers': 2}
+2025-08-19 18:39:28,615 - tts_service - INFO - Submitted TTS job de433f55-ad96-4f92-8f17-30fab2c1e4a4, queue size: 1
+2025-08-19 18:39:28,834 - tts_service - INFO - Loading TTS model for worker 0: tts_models/en/ljspeech/tacotron2-DDC
+2025-08-19 18:39:29,320 - tts_service - INFO - TTS model loaded successfully for worker 0
+2025-08-19 18:39:31,968 - api_router - INFO - TTS successful: response_44ed14cd-1d01-4646-ae5b-5959e670a6b1.wav, processing time: 3.21s
+2025-08-19 18:39:31,968 - api_router - INFO - Audio file verified: D:\Code\project\zhara_V2\zhara\storage\audio\response_44ed14cd-1d01-4646-ae5b-5959e670a6b1.wav (482380 bytes)
+2025-08-19 18:40:12,780 - session_manager - INFO - Deleted session: 9410e12f-9f4e-4518-bf38-80bd8e9d1c2f
+2025-08-19 18:40:16,060 - session_manager - INFO - Deleted session: 26befb23-dcb4-4f9f-b247-6f9f31631195
+2025-08-19 18:40:20,001 - session_manager - INFO - Deleted session: f7965e62-f507-4189-b20b-04788b3f4980
+2025-08-19 18:41:30,203 - session_manager - INFO - Created new session: 0954754d-043e-4a3e-99d0-f165486c8908
+2025-08-19 18:41:30,434 - api_router - ERROR - Error fetching TTS voices: cannot access local variable 'items' where it is not associated with a value
+2025-08-19 18:43:51,109 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:48:51,229 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:53:51,359 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 18:56:48,184 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:56:48,184 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:56:48,184 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:56:48,184 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:56:48,307 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:56:48,413 - zhara - INFO - Shutdown complete
+2025-08-19 18:57:21,879 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:57:21,907 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:57:21,969 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:57:21,969 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:57:21,969 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:57:21,969 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:57:21,970 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 18:57:21,970 - app_state - INFO - Session manager initialized
+2025-08-19 18:57:21,970 - app_state - INFO - Local cache initialized
+2025-08-19 18:57:21,970 - zhara - INFO - Local cache initialized
+2025-08-19 18:57:21,971 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:57:21,971 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:57:21,971 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:57:21,971 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:57:21,971 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 18:58:32,939 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 18:58:32,939 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 18:58:32,939 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 18:58:32,939 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 18:58:33,161 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 18:58:33,269 - zhara - INFO - Shutdown complete
+2025-08-19 18:58:40,194 - __main__ - INFO - Starting Zhara AI Assistant on 0.0.0.0:8000
+2025-08-19 18:58:40,220 - zhara - INFO - Starting Zhara AI Assistant...
+2025-08-19 18:58:40,282 - utils - INFO - GPU Detected: NVIDIA GeForce RTX 5070
+2025-08-19 18:58:40,282 - utils - INFO -    Memory: 11.9 GB
+2025-08-19 18:58:40,282 - utils - INFO -    Compute Capability: 12.0
+2025-08-19 18:58:40,282 - utils - INFO -    Driver Version: 580.97
+2025-08-19 18:58:40,283 - session_manager - INFO - Loaded 7 sessions from storage
+2025-08-19 18:58:40,283 - app_state - INFO - Session manager initialized
+2025-08-19 18:58:40,283 - app_state - INFO - Local cache initialized
+2025-08-19 18:58:40,283 - zhara - INFO - Local cache initialized
+2025-08-19 18:58:40,284 - tts_service - INFO - TTS Worker 0 started
+2025-08-19 18:58:40,284 - tts_service - INFO - TTS Worker 1 started
+2025-08-19 18:58:40,284 - tts_service - INFO - Initialized 2 TTS workers
+2025-08-19 18:58:40,284 - zhara - INFO - TTS service initialized with 2 workers
+2025-08-19 18:58:40,284 - zhara - INFO - Zhara AI Assistant started successfully!
+2025-08-19 19:03:40,498 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 19:08:40,621 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 19:13:40,749 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 19:18:40,859 - session_manager - INFO - Cleaned up 0 old sessions
+2025-08-19 19:19:41,553 - zhara - INFO - Shutting down Zhara AI Assistant...
+2025-08-19 19:19:41,553 - tts_service - INFO - Shutting down TTS service...
+2025-08-19 19:19:41,553 - tts_service - INFO - TTS Worker 1 stopped
+2025-08-19 19:19:41,553 - tts_service - INFO - TTS Worker 0 stopped
+2025-08-19 19:19:41,662 - tts_service - INFO - TTS service shutdown complete
+2025-08-19 19:19:41,761 - zhara - INFO - Shutdown complete

@@ -90,3 +90,9 @@ RATE_LIMIT_WINDOW = get_env_int('RATE_LIMIT_WINDOW', 60, min_value=1)
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO').upper()
 LOG_FILE = BASE_DIR / "logs" / "zhara.log"
 LOG_FILE.parent.mkdir(exist_ok=True)
+
+# --- Third-party TTS Providers ---
+ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY', '')
+ELEVENLABS_BASE_URL = os.getenv('ELEVENLABS_BASE_URL', 'https://api.elevenlabs.io')
+PIPER_EXE_PATH = os.getenv('PIPER_EXE_PATH', '')  # e.g., C:\tools\piper\piper.exe
+PIPER_MODELS_DIR = os.getenv('PIPER_MODELS_DIR', '')  # dir containing *.onnx or *.onnx.gz
