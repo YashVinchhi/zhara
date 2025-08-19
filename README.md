@@ -252,4 +252,6 @@ If you encounter issues:
 - The static files are served from the project directory root.
 
 ## License
-MIT
+All Rights are Reserved by Yash Hemendrabhai Vinchhi 
+
+and changes , copying, unauthorized use of code is prohibited 
