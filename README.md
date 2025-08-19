@@ -252,6 +252,9 @@ If you encounter issues:
 - The static files are served from the project directory root.
 
 ## License
-All Rights are Reserved by Yash Hemendrabhai Vinchhi 
+Copyright © 2025 Yash Vinchhi  
+All rights reserved.  
 
-and changes , copying, unauthorized use of code is prohibited 
+This software is proprietary.  
+Unauthorized copying, modification, distribution, or use of this code,  
+via any medium, is strictly prohibited without explicit permission.
