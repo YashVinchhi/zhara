@@ -1,0 +1,22 @@
+[
+  {
+    "id": "569bd7c8-10db-4308-a1f1-ab451d7a9129",
+    "session_id": "ff7991af-90f5-4741-820f-182b756e51af",
+    "user_message": "hello",
+    "ai_response": "Hello! How can I assist you today?",
+    "timestamp": "2025-08-18T15:11:39.997481",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_7ca8c588-6664-453f-9377-7d89a142d919.wav",
+    "viseme_file": "visemes_7ca8c588-6664-453f-9377-7d89a142d919.json"
+  },
+  {
+    "id": "d054ca72-8211-4c0d-9a30-76797897e0f4",
+    "session_id": "ff7991af-90f5-4741-820f-182b756e51af",
+    "user_message": "Expand on the following premise: 'A lone astronaut on a mission to Mars receives a cryptic message from an unknown source.' Write the first three paragraphs of the story.\"",
+    "ai_response": "In the vast expanse of space, there exists a solitary astronaut who is embarking on a daring mission to the moon. This individual is on a journey through the cosmos with no one in his path but himself. A cryptic message appears from an unknown source, leaving him pondering about the meaning behind it.\n\nThe spacecraft's GPS system indicates that he is heading towards Mars, a distant planet yet to be seen by human beings. The astronaut's heart races as he navigates through the vast expanse of space. He starts thinking of Mars, its lush green landscapes and rich mineral resources. This idea of being able to reach this vast destination leaves him with an exhilarating feeling.\n\nHowever, just when he thinks his journey is complete, a distress signal from the planet's surface suddenly goes off. The astronaut is astounded by this sudden event, wondering what it means. It appears that some form of alien life has visited Mars, and they have sent him a cryptic message containing information about their existence.\n\nThe astronaut becomes more curious about the source of these messages. He starts researching on his computer to see if he can decipher the message's content. The search for clues leads him to a hidden corner of the planet where an ancient portal could be. But upon entering, the door appears to be closed and locked by some unseen force.\n\nThe astronaut is left with a sense of confusion as he realizes that there must be something wrong with this cryptic message from Mars. He wonders if it was sent deliberately or if there may have been an error in the communication channel.\n\nAs he continues his search, he meets a group of scientists who have also come across similar messages. They are amazed by these strange occurrences happening on Earth and wonder what could be causing such anomalies. The astronaut himself starts to understand that these events might be part of some kind of extraterrestrial conspiracy.\n\nThe message from Mars is not just random information about their existence but a warning from an unknown source suggesting they may need to prepare for the worst-case scenario, such as possible invasion by alien life or hostile conditions on Mars. This message suggests that something sinister is lurking in the shadows, waiting for those who dare to step out of line.\n\nThe astronaut comes to realize that his journey through space might be a chance for him to learn about other dimensions and potentially meet up with aliens if they are ready for it. He decides to go back to Earth, hoping that he will find more clues to unravel the mystery that lies ahead.",
+    "timestamp": "2025-08-18T15:12:18.564911",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_e7c9aee6-7ad2-4644-9cdb-5e63ca7646b8.wav",
+    "viseme_file": "visemes_e7c9aee6-7ad2-4644-9cdb-5e63ca7646b8.json"
+  }
+]

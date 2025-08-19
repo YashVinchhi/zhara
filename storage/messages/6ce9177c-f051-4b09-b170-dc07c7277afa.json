@@ -1,0 +1,32 @@
+[
+  {
+    "id": "51aeccb7-6318-4800-8e08-15641926c062",
+    "session_id": "6ce9177c-f051-4b09-b170-dc07c7277afa",
+    "user_message": "Give me the list of Iron Man movie's cast.",
+    "ai_response": "I hear what you're saying. Let me provide you with some thoughts on that.",
+    "timestamp": "2025-08-18T14:00:28.272085",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_0023dc58-59ec-418f-8561-7cff30713810.wav",
+    "viseme_file": "visemes_0023dc58-59ec-418f-8561-7cff30713810.json"
+  },
+  {
+    "id": "651038ff-f3a7-43ab-a37d-febdb61e8af0",
+    "session_id": "6ce9177c-f051-4b09-b170-dc07c7277afa",
+    "user_message": "From 2010",
+    "ai_response": "I understand you're asking about that. Let me think about it for a moment.",
+    "timestamp": "2025-08-18T14:00:48.681541",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_13420e11-c300-4934-a21f-80002638b881.wav",
+    "viseme_file": "visemes_13420e11-c300-4934-a21f-80002638b881.json"
+  },
+  {
+    "id": "b18cb4f0-2304-47f3-a1a7-c85c1ad156f3",
+    "session_id": "6ce9177c-f051-4b09-b170-dc07c7277afa",
+    "user_message": "\"Describe a futuristic city in great detail. Focus on the architecture, the way people live, the technology, and the overall atmosphere of the city.\"",
+    "ai_response": "Hello! How can I help you today?",
+    "timestamp": "2025-08-18T14:01:07.946283",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_4ff51761-52ed-4b04-93c3-d28a6e4c207b.wav",
+    "viseme_file": "visemes_4ff51761-52ed-4b04-93c3-d28a6e4c207b.json"
+  }
+]

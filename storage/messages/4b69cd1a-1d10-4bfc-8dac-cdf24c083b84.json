@@ -1,0 +1,52 @@
+[
+  {
+    "id": "5bc07ca2-508a-468b-8b00-a01044fc6f4e",
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "user_message": "Write a detailed explanation of the water cycle, breaking it down into its main stages and describing what happens in each stage.",
+    "ai_response": "Sure! Water cycles through several stages during the day:\n\n1. **Evaporation**: The first stage where raindrops on Earth are transformed from liquid to vapor as they fall off a leaf or branch, and then fall back to their original form of water droplets. In this stage, water molecules in the clouds become more mobile due to gravity. \n\n2. **Condensation**: As water droplets evaporate, the water molecules combine with each other to create tiny water molecules that are less dense than the surrounding air and rise into the atmosphere.\n\n3. **Precipitation**: This process occurs when raindrops fall from a cloud or droplet of snow. Water in these drops then condenses into liquid droplets, forming clouds. \n\n4. **Cloud Formation**: The falling droplets, which have gained more water, form small clouds of ice crystals that eventually become precipitation.\n\n5. **Rainfall**: This is the main and most visible stage where raindrops start to fall from the sky. The rain falls through the Earth's surface like a fine mist, forming small puddles on land or in streams that are called rivers. \n\n6. **Gristation**: Rain drops become water droplets when they come together under pressure from gravity.\n\n7. **Falling**: As the water droplets combine with each other and rise up through clouds, it eventually falls back to Earth as raindrops hitting a surface or falling from a cloud on land. This is how we get water in our rivers and streams and oceans.\n\n8. **Rushing Water**: The last stage of the cycle is when the water droplets rush down the Earth's surface or through clouds like a torrent, forming rain or sleet that falls to the ground as snow or ice melt.",
+    "timestamp": "2025-08-18T13:52:08.983788",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_c889c88b-ea29-47ff-9d82-58bfa0d6a245.wav",
+    "viseme_file": "visemes_c889c88b-ea29-47ff-9d82-58bfa0d6a245.json"
+  },
+  {
+    "id": "8e26fcbd-a0c8-4a3e-8a0e-38e8534f0971",
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "user_message": "forget it \n\nfrom now on address me as Yash",
+    "ai_response": "Hello Yash!",
+    "timestamp": "2025-08-18T13:53:03.660434",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_9353a372-a0fc-4a50-839b-793339ea7cd3.wav",
+    "viseme_file": "visemes_9353a372-a0fc-4a50-839b-793339ea7cd3.json"
+  },
+  {
+    "id": "43c4da4a-74c2-4253-bc66-e10065dd333e",
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "user_message": "who directed god father moviw",
+    "ai_response": "Godfather is a 1972 American crime film directed by Francis Ford Coppola and starring Marlon Brando, Al Pacino, and Jodie Foster. The plot revolves around the corruption of Italian-American mobsters from New York City to Los Angeles through a series of violent events that culminate in a murder trial involving the mob's leader, Joseph \"The Great\" Luciano.",
+    "timestamp": "2025-08-18T13:53:27.822972",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_dad4acc5-2b27-4400-ac59-37ec18ae16b0.wav",
+    "viseme_file": "visemes_dad4acc5-2b27-4400-ac59-37ec18ae16b0.json"
+  },
+  {
+    "id": "9148c602-232a-4c5e-963d-266b0bb602b7",
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "user_message": "which other movie was directed by the same director",
+    "ai_response": "The director of both movies you mentioned was also the director of the other movie.",
+    "timestamp": "2025-08-18T13:54:12.105658",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_dc1c14a2-ca6c-4d06-b309-0dc24dc17c0d.wav",
+    "viseme_file": "visemes_dc1c14a2-ca6c-4d06-b309-0dc24dc17c0d.json"
+  },
+  {
+    "id": "b33fab8a-f3c3-4a4c-a9ae-c733f09f34e9",
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "user_message": "also what did i said you to address me with ??",
+    "ai_response": "I understood that you might have addressed me by using a title, so I called you by your first name, \"you,\" and then followed it up with the phrase \"addressed me with\" which means you wanted to use my name.",
+    "timestamp": "2025-08-18T13:55:12.510689",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_bdea88b9-15c5-4fe6-b86b-aaa4819912ae.wav",
+    "viseme_file": "visemes_bdea88b9-15c5-4fe6-b86b-aaa4819912ae.json"
+  }
+]

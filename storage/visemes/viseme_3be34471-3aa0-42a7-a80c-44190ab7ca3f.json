@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "soundFile": "D:\\Code\\project\\zhara_V2\\zhara\\storage\\audio\\response_3be34471-3aa0-42a7-a80c-44190ab7ca3f.wav",
+    "duration": 4.58
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.08, "value": "X" },
+    { "start": 0.08, "end": 0.27, "value": "C" },
+    { "start": 0.27, "end": 0.55, "value": "B" },
+    { "start": 0.55, "end": 1.31, "value": "X" },
+    { "start": 1.31, "end": 1.39, "value": "A" },
+    { "start": 1.39, "end": 1.46, "value": "C" },
+    { "start": 1.46, "end": 1.53, "value": "B" },
+    { "start": 1.53, "end": 1.67, "value": "G" },
+    { "start": 1.67, "end": 1.74, "value": "C" },
+    { "start": 1.74, "end": 1.81, "value": "G" },
+    { "start": 1.81, "end": 1.88, "value": "E" },
+    { "start": 1.88, "end": 1.95, "value": "B" },
+    { "start": 1.95, "end": 2.16, "value": "C" },
+    { "start": 2.16, "end": 2.30, "value": "B" },
+    { "start": 2.30, "end": 2.44, "value": "E" },
+    { "start": 2.44, "end": 2.58, "value": "C" },
+    { "start": 2.58, "end": 2.65, "value": "B" },
+    { "start": 2.65, "end": 2.86, "value": "F" },
+    { "start": 2.86, "end": 3.35, "value": "B" },
+    { "start": 3.35, "end": 3.43, "value": "A" },
+    { "start": 3.43, "end": 3.54, "value": "B" },
+    { "start": 3.54, "end": 3.68, "value": "G" },
+    { "start": 3.68, "end": 3.96, "value": "E" },
+    { "start": 3.96, "end": 4.58, "value": "X" }
+  ]
+}

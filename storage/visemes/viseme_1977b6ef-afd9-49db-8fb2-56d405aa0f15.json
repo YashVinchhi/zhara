@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "soundFile": "D:\\Code\\project\\zhara_V2\\zhara\\storage\\audio\\response_1977b6ef-afd9-49db-8fb2-56d405aa0f15.wav",
+    "duration": 7.24
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.03, "value": "X" },
+    { "start": 0.03, "end": 0.21, "value": "B" },
+    { "start": 0.21, "end": 0.70, "value": "F" },
+    { "start": 0.70, "end": 1.29, "value": "X" },
+    { "start": 1.29, "end": 1.90, "value": "B" },
+    { "start": 1.90, "end": 2.04, "value": "D" },
+    { "start": 2.04, "end": 2.11, "value": "B" },
+    { "start": 2.11, "end": 2.25, "value": "C" },
+    { "start": 2.25, "end": 2.39, "value": "B" },
+    { "start": 2.39, "end": 2.60, "value": "F" },
+    { "start": 2.60, "end": 2.67, "value": "B" },
+    { "start": 2.67, "end": 2.81, "value": "C" },
+    { "start": 2.81, "end": 3.02, "value": "B" },
+    { "start": 3.02, "end": 3.09, "value": "F" },
+    { "start": 3.09, "end": 3.16, "value": "C" },
+    { "start": 3.16, "end": 3.51, "value": "B" },
+    { "start": 3.51, "end": 4.17, "value": "X" },
+    { "start": 4.17, "end": 4.35, "value": "F" },
+    { "start": 4.35, "end": 4.49, "value": "B" },
+    { "start": 4.49, "end": 4.56, "value": "E" },
+    { "start": 4.56, "end": 4.70, "value": "F" },
+    { "start": 4.70, "end": 4.84, "value": "D" },
+    { "start": 4.84, "end": 4.91, "value": "B" },
+    { "start": 4.91, "end": 5.05, "value": "F" },
+    { "start": 5.05, "end": 5.13, "value": "A" },
+    { "start": 5.13, "end": 5.29, "value": "H" },
+    { "start": 5.29, "end": 5.57, "value": "C" },
+    { "start": 5.57, "end": 5.71, "value": "B" },
+    { "start": 5.71, "end": 5.79, "value": "A" },
+    { "start": 5.79, "end": 6.07, "value": "F" },
+    { "start": 6.07, "end": 6.15, "value": "A" },
+    { "start": 6.15, "end": 6.62, "value": "C" },
+    { "start": 6.62, "end": 7.24, "value": "X" }
+  ]
+}

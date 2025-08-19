@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "soundFile": "D:\\Code\\project\\zhara_V2\\zhara\\storage\\audio\\response_5de13184-7966-4176-b855-049cc352d143.wav",
+    "duration": 3.43
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.04, "value": "X" },
+    { "start": 0.04, "end": 0.20, "value": "C" },
+    { "start": 0.20, "end": 0.34, "value": "E" },
+    { "start": 0.34, "end": 0.41, "value": "F" },
+    { "start": 0.41, "end": 1.10, "value": "X" },
+    { "start": 1.10, "end": 1.70, "value": "C" },
+    { "start": 1.70, "end": 2.05, "value": "B" },
+    { "start": 2.05, "end": 2.26, "value": "F" },
+    { "start": 2.26, "end": 2.40, "value": "B" },
+    { "start": 2.40, "end": 2.68, "value": "C" },
+    { "start": 2.68, "end": 2.82, "value": "B" },
+    { "start": 2.82, "end": 3.43, "value": "X" }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "702eb7aa-f0f1-4e97-bdae-b1052445e991",
+    "session_id": "62ce9f76-278e-4399-b673-bdd2003db951",
+    "user_message": "hello",
+    "ai_response": "Hello! How can I assist you today?",
+    "timestamp": "2025-08-18T15:07:50.207687",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_58fba246-0845-4f4f-9426-c338a141718f.wav",
+    "viseme_file": "visemes_58fba246-0845-4f4f-9426-c338a141718f.json"
+  },
+  {
+    "id": "2d2d1654-4cb5-48da-95d3-53c35235ec2e",
+    "session_id": "62ce9f76-278e-4399-b673-bdd2003db951",
+    "user_message": "\"Describe a futuristic city in great detail. Focus on the architecture, the way people live, the technology, and the overall atmosphere of the city.\"",
+    "ai_response": "Sure! A description that is not only informative but also entertaining would be perfect for this conversation. For example:\n\n\"Imagine walking through a lush, green garden filled with towering palm trees, dotted with waterfalls. From the high-rise buildings, you can see the stunning skyline of a city. The traffic lights are like giant robots, and it takes a while to figure out which way is right. The people wear smart suits and dresses made from futuristic fabrics that automatically adjust to suit their body temperature. They have access to unlimited resources like water, energy, and air, but they can also easily switch between different modes of transportation.\n\nIn the city, the technology is truly cutting-edge. Robots and artificial intelligence work alongside each other as a team, making critical decisions without fail. From smart security systems that prevent theft or cyberattacks, to self-driving cars that are always safe, there's no limit on what can be done with modern technology. \n\nThe overall atmosphere of this futuristic city is incredibly peaceful and tranquil - the perfect blend of nature and progress. People in this city spend their days exploring the city with a smile on their faces, enjoying each other's company. They have their own private spaces where they can relax and recharge.\n\nImagine walking through this beautiful place; it is truly an experience you will never forget.\"",
+    "timestamp": "2025-08-18T15:08:23.284429",
+    "model_used": "qwen2:0.5b",
+    "audio_file": "response_3af40761-829c-4220-9268-5d2fef54d064.wav",
+    "viseme_file": "visemes_3af40761-829c-4220-9268-5d2fef54d064.json"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84": {
+    "session_id": "4b69cd1a-1d10-4bfc-8dac-cdf24c083b84",
+    "title": "New Chat 8/18/2025, 1:51:30 PM",
+    "created_at": "2025-08-18T13:51:30.707848",
+    "last_updated": "2025-08-18T13:55:12.510689",
+    "message_count": 5,
+    "model_used": "qwen2:0.5b",
+    "tags": []
+  },
+  "6ce9177c-f051-4b09-b170-dc07c7277afa": {
+    "session_id": "6ce9177c-f051-4b09-b170-dc07c7277afa",
+    "title": "New Chat 8/18/2025, 2:00:15 PM",
+    "created_at": "2025-08-18T14:00:15.809182",
+    "last_updated": "2025-08-18T14:01:07.946283",
+    "message_count": 3,
+    "model_used": "qwen2:0.5b",
+    "tags": []
+  },
+  "62ce9f76-278e-4399-b673-bdd2003db951": {
+    "session_id": "62ce9f76-278e-4399-b673-bdd2003db951",
+    "title": "New Chat 8/18/2025, 3:07:38 PM",
+    "created_at": "2025-08-18T15:07:38.063971",
+    "last_updated": "2025-08-18T15:08:23.284429",
+    "message_count": 2,
+    "model_used": "qwen2:0.5b",
+    "tags": []
+  },
+  "ff7991af-90f5-4741-820f-182b756e51af": {
+    "session_id": "ff7991af-90f5-4741-820f-182b756e51af",
+    "title": "New Chat 8/18/2025, 3:11:30 PM",
+    "created_at": "2025-08-18T15:11:30.822514",
+    "last_updated": "2025-08-18T15:12:18.564911",
+    "message_count": 2,
+    "model_used": "qwen2:0.5b",
+    "tags": []
+  }
+}
